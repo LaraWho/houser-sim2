@@ -1,0 +1,30 @@
+.nav-bar {
+    height: 63px;
+    background: #519872;
+    position: static;
+}
+
+.dash-logo {
+    margin: 18px;
+    margin-right: 250px;
+}
+
+@media all and (min-width: 920px) {
+    
+    body {
+        background: #afd4c0;
+    }
+
+    .dash-middle-bar{
+        background: linear-gradient(to bottom, #e2f3ea, #ffffff);
+        width: 60%;
+        height: 93vh;
+        margin: auto;
+        
+    } 
+
+    .dash-logo {
+        margin: 18px;
+        margin-right: 750px;
+    }
+}

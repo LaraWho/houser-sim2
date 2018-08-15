@@ -84,14 +84,15 @@ button:focus  {
     }  
 
     .auth-logo {
-        height: 220px;
-        margin-top: 110px;
+        height: 180px;
+        margin-top: 160px;
     }
 
     .input-header {
         margin-bottom: 8px;
         /* display: flex;
         justify-content: center; */
+        margin-left: -310px;
     }
 
     input {
@@ -100,13 +101,13 @@ button:focus  {
     }
 
     .login {
-        padding: 15px 41px;
+        padding: 10px 38px;
         font-size: 20px;
         margin: 20px;
     }
     
     .register {
-        padding: 15px 33px;
+        padding: 10px 30px;
         font-size: 20px;
         margin: 20px;
         margin-top: 25px;
