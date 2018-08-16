@@ -18,11 +18,11 @@ body {
     font-weight: bold;
 }
 
-input {
+.login-input {
     width: 240px;
     background: #f6f0f0;
     border: 1px solid #519872;
-    border-radius: 2px;
+    border-radius: 5px;
     height: 30px;
     font-size: 18px;
 }
@@ -64,9 +64,10 @@ p {
     font-size: 18px;
 }
 
-button:focus  {
-    outline: none;
-    border: 1px solid #f6f0f0;
+button:focus {
+    /* outline: none; */
+    border: 2px solid #3b5249;
+    /* background-color: aquamarine; */
 }
 
 @media all and (min-width: 920px) {
@@ -95,7 +96,7 @@ button:focus  {
         margin-left: -310px;
     }
 
-    input {
+    .login-input {
         width: 450px;
         background: linear-gradient(to bottom, #e2f3ea, #ffffff);
     }

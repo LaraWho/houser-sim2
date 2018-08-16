@@ -15,9 +15,9 @@ class Home extends Component {
                 <Link to="/dashboard"><img className="auth-logo" src={authLogo} alt="Houser"/></Link>
                 <div>
                     <p className="input-header">Username</p>
-                    <input type="text"/>
+                    <input className="login-input" type="text"/>
                     <p className="input-header">Password</p>
-                    <input type="text"/>
+                    <input className="login-input" type="text"/>
                 </div>
                 <div>
                     <button className="login">Login</button>

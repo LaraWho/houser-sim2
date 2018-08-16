@@ -1,13 +1,70 @@
-.nav-bar {
-    height: 63px;
-    background: #519872;
-    position: static;
+
+.add-prop-btn {
+    color: black;
+    background-color: #8aea92;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
-.dash-logo {
-    margin: 18px;
-    margin-right: 250px;
+hr {
+    visibility: hidden;
 }
+
+.search-text-mob {
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.search-input {
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 18px;
+    border: 1px solid #519872;
+    background-color: #f6f0f0;
+}
+
+input:focus {
+    border: 1.5px solid #519872;
+    outline: none;
+    background-color: #f6f0f0;
+
+}
+
+button:focus  {
+    outline: none;
+    border: 1px solid #f6f0f0;
+}
+
+.reset-btn {
+    margin: 10px; 
+    background-color: #8aea92;
+    font-weight: 600;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.filter-btn {
+    margin: 10px; 
+    background-color: #3b5249;
+    color: #f6f0f0;
+    font-weight: 600;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.listing-header {
+    font-weight: 800;
+    font-size: 18px;
+}
+
 
 @media all and (min-width: 920px) {
     
@@ -18,13 +75,67 @@
     .dash-middle-bar{
         background: linear-gradient(to bottom, #e2f3ea, #ffffff);
         width: 60%;
-        height: 93vh;
+        height: 94vh;
         margin: auto;
         
     } 
 
-    .dash-logo {
-        margin: 18px;
-        margin-right: 750px;
+    .add-prop-btn {
+        margin-top: 30px;
     }
+
+    hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+        height: 2px;
+        width: 90%;
+        background: #D9D9D9;
+        /* background-image: linear-gradient(to right, #ccc, #333, #ccc); */
+        visibility: visible;
+    }
+
+    .listing-header {
+        font-weight: bold;
+        text-align: left;
+        margin-left: 60px;
+    }
+
+    .search-area {
+        display: flex;
+        flex-direction: row;
+        margin-top: 25px;
+    }
+
+    .search-text {
+        margin-top: 18px;
+        text-align: left;
+        margin-left: 70px;
+        /* font-weight: 600; */
+        font-size: 18px;
+    }
+
+    .search-input {
+        width: 90px;
+        margin-left: 10px;
+        height: 37px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-left: 15px;
+    }
+
+    .reset-btn {
+        padding: 8px 12px;
+        font-size: 18px;
+        
+    }
+    
+    .filter-btn {
+        padding: 8px 12px;
+        font-size: 18px;
+        margin-right: 5px;
+}
 }
