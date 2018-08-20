@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './dashboard.css';
 import Nav from '../Navigation/Nav';
 import Media from "react-media";
+import { Link } from 'react-router-dom';
 
 class Dashboard extends Component {
     // constructor() {
@@ -15,7 +16,7 @@ class Dashboard extends Component {
                 <Nav />
                 
                 <div className="dash-middle-bar">
-                    <button className="add-prop-btn">Add New Property</button>
+                    <Link to="/wizard1"><button className="add-prop-btn">Add New Property</button></Link>
 
                     <div className="search-area">
                         <Media query="(min-width: 920px)">

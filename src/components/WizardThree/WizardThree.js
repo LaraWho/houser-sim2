@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Nav from '../Navigation/Nav';
+import { Link } from 'react-router-dom';
+
 
 class WizardThree extends Component {
     // constructor() {
@@ -7,7 +10,20 @@ class WizardThree extends Component {
 
     render() {
         return(
-            <div></div>
+            <div>
+                <Nav />
+
+                <div className="dash-middle-bar">
+
+
+
+
+                <Link to="/wizard2"><button>Previous Step</button></Link>
+                <Link to="/wizard4"><button>Next Step</button></Link>
+                </div>
+
+
+            </div>
         )
     }
 }

@@ -1,5 +1,5 @@
-// import { createStore } from 'redux';
-// import reducer from './ducklings/reducer';
+import { createStore } from 'redux';
+import reducer from './ducklings/reducer';
 
-// let store = createStore(reducer);
-// export default store;
+let store = createStore(reducer);
+export default store;

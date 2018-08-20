@@ -4,6 +4,15 @@ import logo from './header_logo.png';
 import { Link } from 'react-router-dom';
 
 class Dashboard extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            username: '',
+            password: '',
+            userId: ''
+        }
+    }
 
     render() {
         return(
