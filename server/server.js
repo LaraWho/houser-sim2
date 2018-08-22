@@ -30,6 +30,7 @@ const express = require('express')
 
 
     //authorisation endpoints
+    app.get('/auth', cntrl.getUser);
     app.post('/auth/login', cntrl.login);
     app.post('/auth/register', cntrl.register);
     app.post('/auth/logout', cntrl.logout);
