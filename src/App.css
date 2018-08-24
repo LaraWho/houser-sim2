@@ -6,5 +6,74 @@ a {
   text-decoration: none;
 }
 
+/* button:hover {
+  background: rgb(0,0,0,0);
+  color: #3B5249;
+  box-shadow: inset 0 0 0 3px #3B5249;
+} */
+
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+    transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+	}
+
+	80% {
+		-webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+	}
+}
+
+button:hover {
+  animation: bounce 1s;
+}
+
+button:focus  {
+  outline: none;
+  animation: opac 0.2s ease-in-out;
+}
 
 
+button:active {
+  animation: opac 0.2s ease-in-out;
+  /* animation: ripple 0.4s ease-in; */
+  /* transition: all 0.4s ease-in; */
+}
+
+@keyframes opac {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  80% {
+    transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+  99% {
+    transform: scale(0.001, 0.001);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.001, 0.001);
+    opacity: 1;
+  }
+}

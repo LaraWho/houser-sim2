@@ -34,10 +34,6 @@ input:focus {
 
 }
 
-button:focus  {
-    outline: none;
-    border: 1px solid #f6f0f0;
-}
 
 .reset-btn {
     margin: 10px; 

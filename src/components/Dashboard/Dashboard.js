@@ -3,6 +3,7 @@ import './dashboard.css';
 import Nav from '../Navigation/Nav';
 import Media from "react-media";
 import { Link } from 'react-router-dom';
+// import axios from 'axios';
 
 class Dashboard extends Component {
     // constructor() {
@@ -34,6 +35,7 @@ class Dashboard extends Component {
                             {matches => 
                             matches ? ("") : (<br/>)}
                         </Media>
+                        
                         <div className="buttons">
                             <button className="filter-btn">Filter</button>
                             <button className="reset-btn">Reset</button>
