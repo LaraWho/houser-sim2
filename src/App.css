@@ -33,14 +33,34 @@ button:hover {
   animation: bounce 1s;
 }
 
-button:focus {
-  opacity: 0.5;
+button:focus  {
+  outline: none;
+  animation: opac 0.2s ease-in-out;
 }
 
+
 button:active {
-  transform: scale(1.5, 1.5);
+  animation: opac 0.2s ease-in-out;
   /* animation: ripple 0.4s ease-in; */
   /* transition: all 0.4s ease-in; */
+}
+
+@keyframes opac {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes ripple {

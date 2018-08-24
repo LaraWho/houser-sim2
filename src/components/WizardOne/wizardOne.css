@@ -31,7 +31,17 @@
 
 .add-new-header {
     text-align: left;
+    margin-top: 0;
+    padding-top: 20px;
 }
 
+.dash-middle-bar {
+    display: flex;
+}
+
+.cancel-btn {
+    display: flex;
+    flex-direction: row-reverse;
+}
 
 }

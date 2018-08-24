@@ -11,7 +11,8 @@ const express = require('express')
 
     app.use(bodyParser.json());
 
-    const cntrl = require('./house_controller');
+    const house_cntrl = require('./house_controller');
+    const login_cntrl = require('./login_controller');
 
     app.use(session({
         secret: process.env.SESSION_SECRET,
@@ -30,15 +31,15 @@ const express = require('express')
 
 
     //authorisation endpoints
-    app.get('/auth', cntrl.getUser);
-    app.post('/auth/login', cntrl.login);
-    app.post('/auth/register', cntrl.register);
-    app.post('/auth/logout', cntrl.logout);
+    app.get('/auth', login_cntrl.getUser);
+    app.post('/auth/login', login_cntrl.login);
+    app.post('/auth/register', login_cntrl.register);
+    app.post('/auth/logout', login_cntrl.logout);
 
     //properties endpoints
-    app.post('/properties', cntrl.create);
-    app.get('/properties', cntrl.view);
-    app.delete('/properties/:id', cntrl.delete);
+    app.post('/properties', house_cntrl.create);
+    app.get('/properties', house_cntrl.view);
+    app.delete('/properties/:id', house_cntrl.delete);
 
    
 

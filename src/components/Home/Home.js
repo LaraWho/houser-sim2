@@ -16,9 +16,10 @@ class Home extends Component {
     
 
     this.handleLoginRequest = this.handleLoginRequest.bind(this);
+    this.getUser = this.getUser.bind(this);
 }
 
-componentDidMount() {
+getUser() {
     axios.get('/auth').then( () => {
         this.props.history.push('/dashboard');
     }).catch(res => {
