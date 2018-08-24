@@ -12,7 +12,7 @@ class WizardOne extends Component {
         return(
             <div>
                 <Nav />
-                <div className="dash-middle-bar">
+                <div className="dash-middle-bar-w1">
                     <h1>Add New Listing</h1>
                     <Link to="/dashboard"><button>Cancel</button></Link>
 

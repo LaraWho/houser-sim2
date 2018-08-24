@@ -1,0 +1,51 @@
+.cancel-btn {
+    background-color: #FEC2C2;
+    font-weight: 800;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.add-new-header {
+    font-weight: 800;
+    margin: 20px;
+}
+
+.next-btn {
+    margin: 30px; 
+    background-color: #3B5249;
+    color: #F6F0F0;
+    font-weight: 800;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media all and (min-width: 920px) {
+
+.add-new-header {
+    text-align: left;
+    margin-top: 0;
+    padding-top: 20px;
+}
+
+.dash-middle-bar-w1 {
+    display: flex;
+    background: linear-gradient(to bottom, #e2f3ea, #ffffff);
+    width: 60%;
+    height: 100vh;
+    margin: auto;
+}
+
+.cancel-btn {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+}
