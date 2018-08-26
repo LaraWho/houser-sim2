@@ -6,11 +6,12 @@ module.exports = {
 
         dbInstance.login_user([username, password])
             .then(loginResults => {
-            if(req.session.username === username) {
-                this.props.history.push('/dashboard');
-                res.status(200).send("Login Successful");
+            if(loginResults[0]) {
+                req.session.user = loginResults[0]
+                res.status(200).send(loginResults);
+
             } else {
-                return res.status(403).send("User not found")
+                return res.status(403).send("user not found")
             }
         })
     },

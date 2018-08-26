@@ -2,6 +2,17 @@
   text-align: center;
 }
 
+.swal-button {
+  color: #3b5249;
+  background-color: #afd4c0;
+  border: none;
+}
+/* .swal-button:active {
+  border: none;
+  outline: none;
+  text-decoration: none;
+} */
+
 a {
   text-decoration: none;
 }
