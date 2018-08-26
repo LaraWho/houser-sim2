@@ -3,6 +3,7 @@ import './nav.css';
 import logo from './header_logo.png';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Jump from 'react-reveal/Jump';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -32,9 +33,16 @@ class Dashboard extends Component {
         return(
             <div>
                 <div className="nav-bar">
-                    <Link to="/" className="dash-logo"><img src={logo} alt="Houser"/></Link>
+                    <Jump>
+                        <div className="nav-bar-logo">
+                        <Link to="/" className="dash-logo"><img src={logo} alt="Houser"/></Link>
+                        </div>
+                    </Jump>
                     <h1 className="nav-header">Houser</h1>
                     <h1 className="nav-header-dash">Dashboard</h1>
+                    
+                </div>
+                <div className="logout">
                     <h1 className="nav-logout"
                     onClick={this.logout} >Logout</h1>
                 </div>

@@ -3,6 +3,8 @@ import './home.css';
 import authLogo from './auth_logo.png';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Jump from 'react-reveal/Jump';
+
 
 class Home extends Component {
     constructor() {
@@ -43,9 +45,12 @@ handleLoginRequest(e) {
 
     render() {
         return(
-            <div>
-                <div className="middle-bar">
-                <Link to="/dashboard"><img className="auth-logo" src={authLogo} alt="Houser"/></Link>
+            <div className="middle-bar">
+                <Jump>
+                    <div>
+                    <Link to="/dashboard"><img className="auth-logo" src={authLogo} alt="Houser"/></Link>
+                    </div>
+                </Jump>
                 <div>
                     <p className="input-header">Username</p>
                     <input className="login-input" type="text"/>
@@ -55,7 +60,6 @@ handleLoginRequest(e) {
                 <div>
                     <button className="login" onClick={this.handleLoginRequest}>Login</button>
                     <button className="register">Register</button>
-                </div>
                 </div>
 
             </div>

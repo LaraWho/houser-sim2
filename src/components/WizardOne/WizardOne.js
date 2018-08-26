@@ -15,17 +15,20 @@ class WizardOne extends Component {
         return(
             <div>
                 <Nav />
-                <div className="dash-middle-bar">
+                <div className="dash-middle-bar-w1">
                     <h1 className="add-new-header">Add New Listing</h1>
-                    <Link to="/dashboard" ><button className="cancel-btn">Cancel</button></Link>
+                    <div className="cancel">
+                        <Link to="/dashboard" ><button className="cancel-btn">Cancel</button></Link>
+                    </div>
 
                     {/* <img src={active} src=""/>
                     <img src={inactive} src=""/>
                     <img src={inactive} src=""/>
                     <img src={inactive} src=""/>
                     <img src={inactive} src=""/> */}
-
-                    <Link to="/wizard2" ><button className="next-btn">Next Step</button></Link>
+                    <div className="next">
+                        <Link to="/wizard2" ><button className="next-btn">Next Step</button></Link>
+                    </div>
                 </div>
 
             </div>
