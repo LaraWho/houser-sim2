@@ -7,8 +7,10 @@ import WizardTwo from './components/WizardTwo/WizardTwo';
 import WizardThree from './components/WizardThree/WizardThree';
 import WizardFour from './components/WizardFour/WizardFour';
 import WizardFive from './components/WizardFive/WizardFive';
+import Nav from './components/Navigation/Nav';
 
 export default (
+    
     <Switch>
         <Route exact path="/" component={ Home } />
         <Route exact path="/dashboard" component={ Dashboard }/>
@@ -18,4 +20,5 @@ export default (
         <Route exact path="/wizard4" component={ WizardFour }/>
         <Route exact path="/wizard5" component={ WizardFive }/>
     </Switch>
+    
     )

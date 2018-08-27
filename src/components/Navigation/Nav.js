@@ -4,6 +4,7 @@ import logo from './header_logo.png';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Jump from 'react-reveal/Jump';
+import sweetie from 'sweetalert';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -20,11 +21,18 @@ class Dashboard extends Component {
     }
 
     logout() {
+        console.log(675685)
         axios.delete('/auth/logout')
           .then(res => {
-            this.props.history.push('/dashboard')
-            console.log('logged out')
-          })
+            console.log(this.props.history)
+            sweetie({
+                text: "Logging out",
+                timer: 2000,
+                buttons: false})
+            setTimeout(() => {
+            this.props.history.push('/');
+            }, 1000)
+          }).catch((err) => console.log(err))
       }
 
 
@@ -44,7 +52,7 @@ class Dashboard extends Component {
                 </div>
                 <div className="logout">
                     <h1 className="nav-logout"
-                    onClick={this.logout} >Logout</h1>
+                    onClick={this.logout}>Logout</h1>
                 </div>
                 
             </div>

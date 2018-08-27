@@ -11,10 +11,11 @@ class Dashboard extends Component {
     // }
 
     render() {
+        console.log(this.props)
         return(
             <div>
 
-                <Nav />
+                <Nav history={this.props.history}/>
                 
                 <div className="dash-middle-bar">
                     <Link to="/wizard1"><button className="add-prop-btn">Add New Property</button></Link>

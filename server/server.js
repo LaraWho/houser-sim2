@@ -31,10 +31,9 @@ const express = require('express')
 
 
     //authorisation endpoints
-    app.get('/auth', login_cntrl.getUser);
     app.post('/auth/login', login_cntrl.login);
     app.post('/auth/register', login_cntrl.register);
-    // app.post('/auth/logout', login_cntrl.logout);
+    app.delete('/auth/logout', login_cntrl.logout);
 
     //properties endpoints
     // app.post('/properties', house_cntrl.create);

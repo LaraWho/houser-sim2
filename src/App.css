@@ -1,16 +1,57 @@
 .App {
   text-align: center;
 }
+/* .swal-overlay--show-modal .swal-modal {
+  font-family: 'Open Sans', sans-serif;
+} */
+
+/* .swal-icon--success:after {
+  background: linear-gradient(to bottom, #e2f3ea, #ffffff);
+}
+
+.swal-icon--success:after, .swal-icon--success:before {
+  background: linear-gradient(to bottom, #e2f3ea, #ffffff);
+
+} */
+
+.swal-modal {
+  background: linear-gradient(to bottom, #e2f3ea, #ffffff);
+
+}
+
+/* .swal-button-container {
+  text-decoration: none;
+  color: black;
+} */
+
+.swal-text {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+}
 
 .swal-button {
+  font-family: 'Open Sans', sans-serif;
   color: #3b5249;
   background-color: #afd4c0;
   border: none;
+  font-weight: 800;
 }
-/* .swal-button:active {
+
+.swal-button--confirm {
   border: none;
-  outline: none;
-  text-decoration: none;
+}
+
+.swal-overlay {
+  background-color: rgba(59, 82, 73, 0.55);
+}
+
+.swal-button:active {
+  background-color: #3b5249;
+  color: #f6f6f6;
+}
+
+/* .swal-button:focus {
+  
 } */
 
 a {

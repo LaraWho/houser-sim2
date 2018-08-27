@@ -6,6 +6,7 @@ module.exports = {
 
         dbInstance.login_user([username, password])
             .then(loginResults => {
+                console.log(loginResults)
             if(loginResults[0]) {
                 req.session.user = loginResults[0]
                 res.status(200).send(loginResults);
@@ -16,27 +17,25 @@ module.exports = {
         })
     },
 
-    getUser: (req, res) => {
-        let { userId } = req.session;
-
-        if(userId) {
-            res.status(200).send(userId);
-        } else {
-            return res.sendStatus(403);
-        }
-    },
-
     register: (req, res) => {
         const dbInstance = req.app.get('db')
         let {username, password} = req.body;
-        req.session.username = username
-        req.session.password = password
 
         dbInstance.register_user( [username, password] )
-        .then( user => res.status(200).send(user) )
-        .catch( err => {
+        .then( user => {
+            req.session.user = user[0]
+            res.status(200).send(user)
+            console.log(123456789, user)}
+        ).catch( err => {
             res.sendStatus(500)
         })
 
+    },
+
+    logout: (req, res) => {
+        req.session.destroy(() => {
+            console.log('login-controller')
+            res.sendStatus(200)
+        })
     }
 }
