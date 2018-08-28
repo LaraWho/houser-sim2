@@ -9,8 +9,28 @@
 }
 .cancel {
     float: right;
-    position: relative;
-    left: 45px;
+    /* position: relative; */
+    left: 35px;
+}
+
+.dots {
+    margin: 50px auto;
+    position: absolute;
+    margin-left: 45px;
+}
+
+.step-active {
+    margin-right: 10px;
+}
+
+.step-inactive {
+    margin-right: 10px;
+}
+
+.dots .step1 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .add-new-header {
@@ -29,9 +49,19 @@
     border: none;
     border-radius: 5px;
     font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+}
+
+.firstnext-btn {
+    margin: 12px; 
+    background-color: #3B5249;
+    color: #F6F0F0;
+    font-weight: 800;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    position: relative;
 }
 
 .next {
@@ -41,10 +71,31 @@
 
 @media all and (min-width: 920px) {
 
+.dots {
+    margin: 80px auto;
+    /* position: relative; */
+    width: 50rem;
+}
+
+.step-active {
+    margin-right: 60px;
+}
+
+.step-inactive {
+    margin-right: 60px;
+}
+
+.dots .steps {
+    text-align: center;
+    margin-bottom: 15px;
+    margin-right: 60px;
+}
+
 .add-new-header {
     text-align: left;
     margin-top: 0;
     padding-top: 20px;
+    position: absolute;
 }
 
 .dash-middle-bar-w1 {
@@ -53,14 +104,27 @@
         width: 60%;
         height: 94vh;
         margin: auto;
+        margin-right: 14%;
 }
 
 .next {
     margin: auto;
+    position: absolute;
+    bottom: 150px;
+    right: 250px;
+}
+
+.firstnext-btn {
+    padding: 10px 16px;
+}
+
+.next-btn {
+    padding: 10px 16px;
+    top: 250px;
 }
 
 .cancel {
-    left: 67%;
+    left: 80%;
 }
 
 /* .next-btn {

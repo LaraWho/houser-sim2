@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './nav.css';
 import logo from './header_logo.png';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Jump from 'react-reveal/Jump';
 import sweetie from 'sweetalert';
@@ -21,10 +20,8 @@ class Dashboard extends Component {
     }
 
     logout() {
-        console.log(675685)
         axios.delete('/auth/logout')
           .then(res => {
-            console.log(this.props.history)
             sweetie({
                 text: "Logging out",
                 timer: 2000,
@@ -43,7 +40,7 @@ class Dashboard extends Component {
                 <div className="nav-bar">
                     <Jump>
                         <div className="nav-bar-logo">
-                        <Link to="/" className="dash-logo"><img src={logo} alt="Houser"/></Link>
+                        <img className="dash-logo" src={logo} alt="Houser"/>
                         </div>
                     </Jump>
                     <h1 className="nav-header">Houser</h1>

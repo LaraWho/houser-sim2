@@ -7,7 +7,6 @@ import WizardTwo from './components/WizardTwo/WizardTwo';
 import WizardThree from './components/WizardThree/WizardThree';
 import WizardFour from './components/WizardFour/WizardFour';
 import WizardFive from './components/WizardFive/WizardFive';
-import Nav from './components/Navigation/Nav';
 
 export default (
     

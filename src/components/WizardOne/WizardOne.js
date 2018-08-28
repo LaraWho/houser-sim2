@@ -21,13 +21,17 @@ class WizardOne extends Component {
                         <Link to="/dashboard" ><button className="cancel-btn">Cancel</button></Link>
                     </div>
 
-                    {/* <img src={active} src=""/>
-                    <img src={inactive} src=""/>
-                    <img src={inactive} src=""/>
-                    <img src={inactive} src=""/>
-                    <img src={inactive} src=""/> */}
+                    <div className="dots">
+                        <p className="steps">Step 1</p>
+                        <img className="step-active" src={require('../../assets/step_active.png')} alt="step1"/>
+                        <img className="step-inactive" src={require('../../assets/step_inactive.png')} alt="step2"/>
+                        <img className="step-inactive" src={require('../../assets/step_inactive.png')} alt="step3"/>
+                        <img className="step-inactive" src={require('../../assets/step_inactive.png')} alt="step4"/>
+                        <img className="step-inactive" src={require('../../assets/step_inactive.png')} alt="step5"/>
+                    </div>
+
                     <div className="next">
-                        <Link to="/wizard2" ><button className="next-btn">Next Step</button></Link>
+                        <Link to="/wizard2" ><button className="firstnext-btn">Next Step</button></Link>
                     </div>
                 </div>
 

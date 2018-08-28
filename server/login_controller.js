@@ -6,7 +6,6 @@ module.exports = {
 
         dbInstance.login_user([username, password])
             .then(loginResults => {
-                console.log(loginResults)
             if(loginResults[0]) {
                 req.session.user = loginResults[0]
                 res.status(200).send(loginResults);
@@ -23,18 +22,20 @@ module.exports = {
 
         dbInstance.register_user( [username, password] )
         .then( user => {
-            req.session.user = user[0]
-            res.status(200).send(user)
-            console.log(123456789, user)}
-        ).catch( err => {
-            res.sendStatus(500)
-        })
-
+            if (username.length >= 5) {
+                req.session.username = username
+                req.session.password = password
+                res.status(200).send(user)
+                console.log('register in controller', username)
+            } else {
+                console.log('my else statement')
+                return res.sendStatus(406)
+            }
+        }).catch( err => res.sendStatus(500))
     },
 
     logout: (req, res) => {
         req.session.destroy(() => {
-            console.log('login-controller')
             res.sendStatus(200)
         })
     }

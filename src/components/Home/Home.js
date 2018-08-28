@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './home.css';
 import authLogo from './auth_logo.png';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Jump from 'react-reveal/Jump';
 import { getUser } from '../../ducklings/reducer';
@@ -50,7 +49,6 @@ handleLoginRequest(e) {
         username: this.state.username,
         password: this.state.password
     }).then(res => {
-        console.log('logging-in', res.data)
         this.props.getUser(res.data)
         sweetie({
             text: "LOGGING IN!",
@@ -69,7 +67,8 @@ handleRegister(e) {
         username: this.state.username,
         password: this.state.password
     }).then(res => {
-        console.log('registering', res.data)
+        if(this.state.username.length && this.state.password.length >= 5) {
+        console.log('registering in front', res.data)
         this.props.getUser(res.data)
         sweetie({
             text: "REGISTERED!",
@@ -78,8 +77,13 @@ handleRegister(e) {
         setTimeout(() => {
         this.props.history.push('/dashboard');
         }, 1000)
-        
-    }).catch(() => sweetie("You didn't register...Would you like a jellybaby?"))
+        } else {
+            console.log('should not be registering', res.data)
+            sweetie("More than 5 characters each, please!")
+        }
+    }).catch(() => sweetie({
+            title: "Could not register due to lack of character",
+            text: "5 character minimum here"}))
 }
 
 

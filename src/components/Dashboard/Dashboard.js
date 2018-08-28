@@ -11,7 +11,6 @@ class Dashboard extends Component {
     // }
 
     render() {
-        console.log(this.props)
         return(
             <div>
 
@@ -30,7 +29,8 @@ class Dashboard extends Component {
                             )}
                         </Media>
                             
-                        <input className="search-input" type="text"/>
+                        <input className="search-input" type="text"
+                        placeholder=" 0"/>
 
                         <Media query="(min-width: 920px)">
                             {matches => 
