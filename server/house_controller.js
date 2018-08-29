@@ -1,11 +1,20 @@
 module.exports = {
 
-    //     view_all: (req, res) => {
-    //     const dbInstance = req.app.get('db')
+        view_all: (req, res) => {
+        const dbInstance = req.app.get('db')
+        let {user_id} = req.session.user
 
-    //     dbInstance.view_all([])
-    //     .then()
-    // },
+        dbInstance.view_all([user_id])
+        .then(houses => {
+            res.status(200).send(houses)
+            
+        }).catch( err => {
+            res.sendStatus(500)
+            console.log(err)
+        })
+    
+
+    }
 
     //     create: (req, res) => {
     //     const dbInstance = req.app.get('db');

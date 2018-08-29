@@ -3,12 +3,43 @@ import './dashboard.css';
 import Nav from '../Navigation/Nav';
 import Media from "react-media";
 import { Link } from 'react-router-dom';
-// import axios from 'axios';
+import axios from 'axios';
+import sweetie from 'sweetalert';
 
 class Dashboard extends Component {
-    // constructor() {
-    //     super()
-    // }
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            image: '',
+            name: '',
+            loan: 0,
+            mortgage: 0,
+            rec_rent: 0,
+            des_rent: 0,
+            address: '',
+            city: ''
+        }
+    }
+
+    componentDidMount() {
+        axios.get('/properties')
+        .then(res => {
+            console.log('dashboard mount', res.data)
+            // this.props.history.push('/dashboard');
+        }).catch(() => {
+            console.log('?!?!?')
+            sweetie({
+                title: 'Oh NOOO',
+                text: "AAAH!"
+                // timer: 1000,
+                // buttons: false
+            })
+            setTimeout(() => {
+            this.props.history.push('/');
+                }, 1000)
+        })
+    }
 
     render() {
         return(
@@ -45,6 +76,29 @@ class Dashboard extends Component {
 
                     <hr/>
                     <h1 className="listing-header">Home Listings</h1>
+                    
+                    {/* this.state.map((item, i) => { */}
+
+                    <div>
+                        <div>
+                            <img className="prop-img" src="" alt=""/>
+                        </div>
+                        <div>
+                            <h1>Name</h1>
+                        </div>
+                        <div>
+                            <p>House information will go here</p>
+                            <h1>`Loan: ${this.state.loan}`</h1>
+                            <h1>Monthly Mortage:</h1>
+                            <h1>Recommended Rent:</h1>
+                            <h1>Desired Rent:</h1>
+                            <h1>Addess:</h1>
+                            <h1>City:</h1>
+                        </div>
+                        <div>x</div>
+                    </div>
+                    {/* }) */}
+
                 </div>
 
 

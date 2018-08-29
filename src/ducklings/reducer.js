@@ -4,7 +4,7 @@ let initialState = {
   info: '',
   address: '',
   city: '',
-  state: '',
+  c_state: '',
   zipcode: '',
   image: '',
   loan_amount: 0,
@@ -44,7 +44,7 @@ export default function reducer(state=initialState, action) {
       case UPDATE_CITY:
         return Object.assign({}, state, { city: action.payload })
       case UPDATE_STATE:
-        return Object.assign({}, state, { state: action.payload })
+        return Object.assign({}, state, { c_state: action.payload })
       case UPDATE_ZIP:
         return Object.assign({}, state, { zipcode: action.payload })
       case UPDATE_IMAGE:
@@ -98,10 +98,10 @@ export function updateCity(city) {
   }
 }
 
-export function updateState(state) {
+export function updateState(c_state) {
   return {
     type: UPDATE_STATE,
-    payload: state
+    payload: c_state
   }
 }
 

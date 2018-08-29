@@ -1,9 +1,7 @@
 body {
-    /* background: linear-gradient(to bottom, #e2f3ea, #ffffff); */
         background: #afd4c0;
         font-family: 'Open Sans', sans-serif;
         -webkit-font-smoothing: antialiased;
-        /* display: flex; */
 }
 
 .auth-logo {
@@ -75,16 +73,11 @@ p {
 
 @media all and (min-width: 920px) {
     
-    body {
-        background: #afd4c0;
-    }
-
     .middle-bar{
         background: linear-gradient(to bottom, #e2f3ea, #ffffff);
         width: 60%;
         height: 100vh;
         margin: auto;
-        
     }  
 
     .auth-logo {

@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
 import Nav from '../Navigation/Nav';
 import { Link } from 'react-router-dom';
-// import axios from 'axios';
+import { connect } from 'react-redux';
+import { updateImage } from '../../ducklings/reducer';
 
 
 class WizardThree extends Component {
-    // constructor() {
-    //     super()
-    // }
-
     render() {
+        const { updateImage } = this.props
         return(
             <div>
-                <Nav />
+                <Nav history={this.props.history}/>
 
-                <div className="dash-middle-bar">
+                <div className="middle-bar">
 
                     <div className="dots">
                         <p className="steps">Step 3</p>
@@ -25,7 +23,11 @@ class WizardThree extends Component {
                         <img className="step-inactive" src={require('../../assets/step_inactive.png')} alt="step5"/>
                     </div>
 
-
+                <div>
+                    <p className="input-header">Image URL</p>
+                    <input type="text" 
+                    onChange={(e) => updateImage(e.target.value)}/>
+                </div>
 
                 <Link to="/wizard2"><button className="next-btn">Previous Step</button></Link>
                 <Link to="/wizard4"><button className="next-btn">Next Step</button></Link>
@@ -37,4 +39,11 @@ class WizardThree extends Component {
     }
 }
 
-export default WizardThree;
+function mapStateToProps(state) {
+    const { image } = state
+    return {
+        image
+    }
+}
+
+export default connect(mapStateToProps, { updateImage } )(WizardThree);

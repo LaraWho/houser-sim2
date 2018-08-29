@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import Nav from '../Navigation/Nav';
 import { Link } from 'react-router-dom';
-import './wizardTwo.css';
-// import axios from 'axios';
+// import './wizardTwo.css';
+import '../wizardStyling.css';
+import { connect } from 'react-redux';
+import { updateAddress, updateCity, updateState, updateZip } from '../../ducklings/reducer';
 
 class WizardTwo extends Component {
-    // constructor() {
-    //     super()
-    // }
-
     render() {
+        const { updateAddress, updateCity, updateState, updateZip } = this.props
         return(
         <div>
-            <Nav />
+            <Nav history={this.props.history}/>
 
-            <div className="dash-middle-bar-w2">
+            <div className="middle-bar">
 
                  <h1 className="add-new-header-w2">Add New Listing</h1>
                     <div className="cancel-w2">
@@ -30,6 +29,26 @@ class WizardTwo extends Component {
                         <img className="step-w2" src={require('../../assets/step_inactive.png')} alt="step5"/>
                 </div>
 
+                <div>
+                    <p className="input-header">Address</p>
+                    <input type="text"
+                    onChange={(e) => updateAddress(e.target.value)} />
+                </div>
+                <div>
+                    <p className="input-header">City</p>
+                    <input type="text"
+                    onChange={(e) => updateCity(e.target.value)}/>
+                </div>
+                <div>
+                    <p className="input-header">State</p>
+                    <input type="text" 
+                    onChange={(e) => updateState(e.target.value)}/>
+                </div>
+                <div>
+                    <p className="input-header">Zip</p>
+                    <input type="text" 
+                    onChange={(e) => updateZip(e.target.value)}/>
+                </div>
 
                 <Link to="/wizard1"><button className="prev-btn-w2">Previous Step</button></Link>
                 <Link to="/wizard3"><button className="next-btn-w2">Next Step</button></Link>
@@ -40,4 +59,14 @@ class WizardTwo extends Component {
     }
 }
 
-export default WizardTwo;
+function mapStateToProps(state) {
+    const { address, city, c_state, zipcode } = state
+    return {
+        address,
+        city,
+        c_state,
+        zipcode
+    }
+}
+
+export default connect(mapStateToProps, { updateAddress, updateCity, updateState, updateZip } )(WizardTwo);

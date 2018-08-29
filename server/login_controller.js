@@ -13,7 +13,7 @@ module.exports = {
             } else {
                 return res.status(403).send("user not found")
             }
-        })
+        }).catch( err => res.sendStatus(500))
     },
 
     register: (req, res) => {

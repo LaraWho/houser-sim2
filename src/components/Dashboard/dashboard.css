@@ -107,7 +107,7 @@ input:focus {
     .search-text {
         margin-top: 18px;
         text-align: left;
-        margin-left: 70px;
+        margin-left: 40px;
         /* font-weight: 600; */
         font-size: 18px;
     }
@@ -134,5 +134,11 @@ input:focus {
         padding: 8px 12px;
         font-size: 18px;
         margin-right: 5px;
-}
+    }
+    
+    .prop-img {
+        height: 150px;
+        width: 150px;
+        background-color: #3b5249;
+    }
 }

@@ -37,7 +37,7 @@ const express = require('express')
 
     //properties endpoints
     // app.post('/properties', house_cntrl.create);
-    // app.get('/properties', house_cntrl.view);
+    app.get('/properties', house_cntrl.view_all);
     // app.delete('/properties/:id', house_cntrl.delete);
 
    

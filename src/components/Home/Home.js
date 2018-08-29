@@ -20,7 +20,6 @@ class Home extends Component {
     
 
     this.handleLoginRequest = this.handleLoginRequest.bind(this);
-    this.getUserHouses = this.getUserHouses.bind(this);
     this.handleRegister = this.handleRegister.bind(this);
 }
 
@@ -33,14 +32,6 @@ handleUsername = val => {
 handlePassword = val => {
     this.setState({
         password: val
-    })
-}
-
-getUserHouses() {
-    axios.get('/auth').then( () => {
-        this.props.history.push('/dashboard');
-    }).catch(res => {
-        this.props.history.push('/');
     })
 }
 

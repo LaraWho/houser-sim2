@@ -1,4 +1,4 @@
-.cancel-btn {
+/* .cancel-btn {
     background-color: #FEC2C2;
     font-weight: 800;
     padding: 8px 10px;
@@ -8,9 +8,8 @@
     margin-top: 10px;
 }
 .cancel {
-    float: right;
-    /* position: relative; */
-    left: 35px;
+    position: absolute;
+    left: 15px;
 }
 
 .dots {
@@ -73,7 +72,6 @@
 
 .dots {
     margin: 80px auto;
-    /* position: relative; */
     width: 50rem;
 }
 
@@ -100,6 +98,7 @@
 
 .dash-middle-bar-w1 {
     display: flex;
+    justify-content: center;
     background: linear-gradient(to bottom, #e2f3ea, #ffffff);
         width: 60%;
         height: 94vh;
@@ -127,12 +126,4 @@
     left: 80%;
 }
 
-/* .next-btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 } */
-
-
-
-}
