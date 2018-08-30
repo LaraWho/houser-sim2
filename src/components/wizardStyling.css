@@ -9,26 +9,40 @@
     font-size: 14px;
 }
 
+.input-header {
+    color: #333;
+}
+
+input {
+    height: 14px;
+    font-size: 14px;
+    width: 60%;
+}
+
+textarea {
+    width: 60%;
+}
+
 .add-new-header {
     font-weight: 800;
-    margin: 20px;
+    margin: 15px;
     margin-right: 30px;
     float: left;
     position: relative;
+    color: #333;
 }
+
 
 .cancel-btn {
     background-color: #FEC2C2;
     font-weight: 800;
-    padding: 10px 14px;
+    padding: 6px 14px;
     border: none;
     border-radius: 5px;
     font-size: 14px;
     margin-top: 10px;
-}
-
-.cancel {
-    position: relative;
+    margin-bottom: 5px;
+    color: #333;
 }
 
 .next-btn {
@@ -70,8 +84,13 @@
 }
 
 .steps {
-    margin-top: 10px;
+    margin-top: 5px;
     margin-right: 10px;
+    color: #333;
+}
+
+.bottom-btns {
+    margin-top: 15px;
 }
 
 @media all and (min-width: 920px) {
@@ -83,37 +102,68 @@
         margin: auto;
     } 
 
+    .add-new-header {
+        font-size: 18px;
+        margin: 20px;
+    }
+
     .bottom-btns {
+        display: flex;
+        justify-content: space-between;
+        width: 63%;
+        margin: auto;
         margin-top: 30px;
     }
 
     .next {
         margin-top: 30px;
-        margin-left: 120px;
+        /* margin-left: 42%; */
     }
 
     .cancel {
         right: -25%;
+        position: relative;
+    }
+
+    .cancel-btn {
+        padding: 10px 20px;
+
     }
 
     .dots {
         padding-top: 15px;
-        margin-left: 30px;
+        /* width: 60%; */
+        margin: auto;
     }
 
     .one-dot {
-        margin-right: 50px;
+        margin-right: 30px;
+        margin-left: 30px;
         margin-top: 10px;
     }
 
+
     .steps {
-        margin-top: 10px;
-        margin-right: 50px;
+        margin: auto;
     }
 
     .input-header {
         margin-bottom: 5px;
         margin-top: 30px;
+        text-align: left;
+        margin-left: 22%;
+        color: #333;
+    }
+    .rent {
+        margin-left: 35%;
+    }
+
+    input {
+        width: 60%;
+    }
+
+    textarea {
+        width: 60%;
     }
     
     

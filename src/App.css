@@ -1,10 +1,26 @@
 .App {
   text-align: center;
+  letter-spacing: .2px;
+  font-family: 'Open Sans', sans-serif;
+        -webkit-font-smoothing: antialiased;
+}
+
+
+p {
+  font-size: 18px;
+  color: #333;
 }
 
 input {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  letter-spacing: .2px;
   border-radius: 5px;
   border: 1px solid #519872;
+  height: 32px;
+  padding: 12px;
+  color: #333;
+  background-color:#fdfbfb;
 }
 
 input:focus {

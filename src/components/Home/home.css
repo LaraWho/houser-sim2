@@ -48,20 +48,13 @@ body {
     font-size: 18px;
 
 }
-/* 
-button {
-    font-size: 18px;
-    font-weight: 800;
-} */
 
-p {
-    font-size: 18px;
-}
 
 .password-rules {
     font-style: italic;
     margin-top: 5px;
     margin-bottom: 15px;
+    color: #333;
 }
 
 @media all and (min-width: 920px) {

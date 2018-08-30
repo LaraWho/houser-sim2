@@ -54,11 +54,11 @@ body {
     }
     
     .nav-bar-logo {
-        margin-left: 20%;
+        margin-left: 19%;
     }
 
     .dash-logo {
-        margin-left: 23%;
+        margin-left: 10%;
     }
 
     .nav-bar .nav-header-dash {
@@ -68,13 +68,10 @@ body {
         margin-left: 10px;
         font-size: 28px;
     }
-/* 
-    .nav-bar .nav-logout {
-        display: flex;
-        justify-content: flex-end;
-        align-content: flex-end;
-        margin-left: 20%;
-    } */
+ 
+    .nav-logout { 
+        margin-right: -170%;
+    }
 
     a .dash-logo{
         margin-left: 30%;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../Navigation/Nav';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updateDesRent, updateRecRent } from '../../ducklings/reducer';
+import { updateDesRent } from '../../ducklings/reducer';
 
 class WizardFive extends Component {
     constructor(props) {
@@ -38,7 +38,7 @@ class WizardFive extends Component {
                         <img className="one-dot" src={require('../../assets/step_active.png')} alt="step5"/>
                     </div>
                 <div>
-                    <p className="input-header">Recommended Rent:  </p>
+                    <p className="input-header rent">Recommended Rent:  </p>
                 </div>
                 <div>
                     <p className="input-header">Desired Rent</p>
@@ -59,12 +59,11 @@ class WizardFive extends Component {
 }
 
 function mapStateToProps(state) {
-    const { des_rent, rec_rent, mortgage } = state
+    const { des_rent, mortgage } = state
     return {
         des_rent,
-        rec_rent,
         mortgage
     }
 }
 
-export default connect(mapStateToProps, { updateDesRent, updateRecRent })(WizardFive);
+export default connect(mapStateToProps, { updateDesRent })(WizardFive);
