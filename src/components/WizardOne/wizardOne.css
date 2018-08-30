@@ -1,36 +1,4 @@
-/* .cancel-btn {
-    background-color: #FEC2C2;
-    font-weight: 800;
-    padding: 8px 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    margin-top: 10px;
-}
-.cancel {
-    position: absolute;
-    left: 15px;
-}
-
-.dots {
-    margin: 50px auto;
-    position: absolute;
-    margin-left: 45px;
-}
-
-.step-active {
-    margin-right: 10px;
-}
-
-.step-inactive {
-    margin-right: 10px;
-}
-
-.dots .step1 {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
+/* 
 
 .add-new-header {
     font-weight: 800;
@@ -39,54 +7,11 @@
     position: relative;
 }
 
-.next-btn {
-    margin: 12px; 
-    background-color: #3B5249;
-    color: #F6F0F0;
-    font-weight: 800;
-    padding: 8px 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    position: relative;
-}
-
-.firstnext-btn {
-    margin: 12px; 
-    background-color: #3B5249;
-    color: #F6F0F0;
-    font-weight: 800;
-    padding: 8px 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-    position: relative;
-}
-
-.next {
-    float: right;
-    position: relative;
-}
-
 @media all and (min-width: 920px) {
 
 .dots {
     margin: 80px auto;
     width: 50rem;
-}
-
-.step-active {
-    margin-right: 60px;
-}
-
-.step-inactive {
-    margin-right: 60px;
-}
-
-.dots .steps {
-    text-align: center;
-    margin-bottom: 15px;
-    margin-right: 60px;
 }
 
 .add-new-header {
@@ -104,26 +29,4 @@
         height: 94vh;
         margin: auto;
         margin-right: 14%;
-}
-
-.next {
-    margin: auto;
-    position: absolute;
-    bottom: 150px;
-    right: 250px;
-}
-
-.firstnext-btn {
-    padding: 10px 16px;
-}
-
-.next-btn {
-    padding: 10px 16px;
-    top: 250px;
-}
-
-.cancel {
-    left: 80%;
-}
-
 } */

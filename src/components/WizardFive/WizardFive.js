@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import Nav from '../Navigation/Nav';
 import { Link } from 'react-router-dom';
-// import './wizardFive.css';
 import { connect } from 'react-redux';
 import { updateDesRent, updateRecRent } from '../../ducklings/reducer';
 
 class WizardFive extends Component {
+    constructor(props) {
+        super(props)
+
+        this.addDesRent = this.addDesRent.bind(this);
+    }
+
+    addDesRent(e) {
+        this.props.updateDesRent(e.target.value)
+    }
+
+
     render() {
-        const { updateDesRent, updateRecRent } = this.props
         return(
         <div>
                 
@@ -22,11 +31,11 @@ class WizardFive extends Component {
 
                     <div className="dots">
                         <p className="steps">Step 5</p>
-                        <img className="step-active" src={require('../../assets/step_completed.png')} alt="step1"/>
-                        <img className="step-active" src={require('../../assets/step_completed.png')} alt="step2"/>
-                        <img className="step-inactive" src={require('../../assets/step_completed.png')} alt="step3"/>
-                        <img className="step-inactive" src={require('../../assets/step_completed.png')} alt="step4"/>
-                        <img className="step-inactive" src={require('../../assets/step_active.png')} alt="step5"/>
+                        <img className="one-dot" src={require('../../assets/step_completed.png')} alt="step1"/>
+                        <img className="one-dot" src={require('../../assets/step_completed.png')} alt="step2"/>
+                        <img className="one-dot" src={require('../../assets/step_completed.png')} alt="step3"/>
+                        <img className="one-dot" src={require('../../assets/step_completed.png')} alt="step4"/>
+                        <img className="one-dot" src={require('../../assets/step_active.png')} alt="step5"/>
                     </div>
                 <div>
                     <p className="input-header">Recommended Rent:  </p>
@@ -34,12 +43,14 @@ class WizardFive extends Component {
                 <div>
                     <p className="input-header">Desired Rent</p>
                     <input type="text" 
-                    onChange={(e) => updateDesRent(e.target.value)}/>
+                    value={this.props.des_rent}
+                    onChange={this.addDesRent}/>
                 </div>
 
-
-                <Link to="/wizard4"><button className="next-btn">Previous Step</button></Link>
-                <Link to="/dashboard"><button className="complete">Complete</button></Link>
+                <div className="bottom-btns">
+                    <Link to="/wizard4"><button className="next-btn">Previous Step</button></Link>
+                    <Link to="/dashboard"><button className="complete">Complete</button></Link>
+                </div>
             </div>
             
         </div>

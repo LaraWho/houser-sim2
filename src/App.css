@@ -2,6 +2,30 @@
   text-align: center;
 }
 
+input {
+  border-radius: 5px;
+  border: 1px solid #519872;
+}
+
+input:focus {
+  border: 1.5px solid #519872;
+  outline: none;
+  background-color: #f8f8f8;
+
+}
+
+textarea {
+  border-radius: 5px;
+  border: 1px solid #519872;
+}
+
+textarea:focus {
+  border: 1.5px solid #519872;
+  outline: none;
+  background-color: #f8f8f8;
+
+}
+
 .swal-modal {
   background: linear-gradient(to bottom, #e2f3ea, #ffffff);
 
@@ -44,13 +68,13 @@ a {
 	}
 
 	40% {
-		-webkit-transform: translateY(-15px);
-    transform: translateY(-15px);
+		-webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
 	}
 
 	80% {
-		-webkit-transform: translateY(-10px);
-    transform: translateY(-10px);
+		-webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
 	}
 }
 
@@ -58,7 +82,7 @@ button:hover {
   animation: bounce 1s;
 }
 
-button:focus  {
+button:focus {
   outline: none;
   animation: opac 0.2s ease-in-out;
 }

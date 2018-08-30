@@ -25,13 +25,6 @@ body {
     font-size: 18px;
 }
 
-input:focus {
-    border: 1.5px solid #519872;
-    outline: none;
-    background-color: #f6f0f0;
-
-}
-
 .login {
     margin-top: 20px;
     margin-right: 10px;
@@ -87,9 +80,6 @@ p {
 
     .input-header {
         margin-bottom: 8px;
-        /* display: flex;
-        justify-content: center; */
-        margin-left: -310px;
     }
 
     .login-input {

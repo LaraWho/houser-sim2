@@ -3,6 +3,7 @@ module.exports = {
         view_all: (req, res) => {
         const dbInstance = req.app.get('db')
         let {user_id} = req.session.user
+        console.log(user_id)
 
         dbInstance.view_all([user_id])
         .then(houses => {
