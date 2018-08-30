@@ -31,8 +31,14 @@ input:focus {
 }
 
 textarea {
+  letter-spacing: .2px;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
   border-radius: 5px;
   border: 1px solid #519872;
+  padding: 12px;
+  color: #333;
+  background-color:#fdfbfb;
 }
 
 textarea:focus {
@@ -106,8 +112,6 @@ button:focus {
 
 button:active {
   animation: opac 0.2s ease-in-out;
-  /* animation: ripple 0.4s ease-in; */
-  /* transition: all 0.4s ease-in; */
 }
 
 @keyframes opac {

@@ -11,37 +11,9 @@ class Dashboard extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            image: '',
-            name: '',
-            loan: 0,
-            mortgage: 0,
-            rec_rent: 0,
-            des_rent: 0,
-            address: '',
-            city: ''
-        }
     }
 
-    componentDidMount() {
-        axios.get('/properties')
-        .then(res => {
-            //set all items to state
-            console.log('dashboard mount', res.data)
-            // this.props.history.push('/dashboard');
-        }).catch(() => {
-            console.log('?!?!?')
-            sweetie({
-                title: 'Oh NOOO',
-                text: "AAAH!"
-                // timer: 1000,
-                // buttons: false
-            })
-            setTimeout(() => {
-            this.props.history.push('/');
-                }, 1000)
-        })
-    }
+    
 
     render() {
         return(
@@ -79,7 +51,7 @@ class Dashboard extends Component {
                     <hr/>
                     <h1 className="listing-header">Home Listings</h1>
                     
-                    {/* <Listings /> */}
+                    <Listings />
 
                 </div>
 

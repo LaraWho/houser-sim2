@@ -1,75 +1,68 @@
-// import React, { Component } from 'react';
-// import './dashboard.css';
-// import axios from 'axios';
-// import sweetie from 'sweetalert';
+import React, { Component } from 'react';
+import './dashboard.css';
+import axios from 'axios';
+import sweetie from 'sweetalert';
 
-// class Listings extends Component {
-//     constructor(props) {
-//         super(props)
+class Listings extends Component {
+    constructor(props) {
+        super(props)
 
-//         this.state = {
-//             houses: []
-//         }
+        this.state = {
+            houses: []
+        }
+    }
 
-//         // this.handleLoad = this.handleLoad.bind(this);
-//     }
+    componentDidMount() {
+        axios.get('/properties')
+        .then(res => {
+            this.setState({
+                houses: res.data
+            })
+        }).catch(() => {
+            console.log('?!?!?')
+            // sweetie({
+            //     title: 'Oh NOOO',
+            //     text: "AAAH!"
+                // timer: 1000,
+                // buttons: false
+            })
+            // setTimeout(() => {
+            // this.props.history.push('/');
+            //     }, 1000)
+        // })
+        }
 
-//     // handleLoad() {
-//     //     this.setState({
-//     //         houses: res.data
-//     //     })
-//     // }
-
-//     // componentDidMount() {
-//     //     axios.get('/properties')
-//     //     .then(res => {
-//     //         //set all items to state
-//     //         console.log(res.data)
-//     //         console.log('dashboard mount', res.data)
-//     //         // this.props.history.push('/dashboard');
-//     //     }).catch(() => {
-//     //         console.log('?!?!?')
-//     //         sweetie({
-//     //             title: 'Oh NOOO',
-//     //             text: "AAAH!"
-//     //             // timer: 1000,
-//     //             // buttons: false
-//     //         })
-//     //         setTimeout(() => {
-//     //         this.props.history.push('/');
-//     //             }, 1000)
-//     //     })
-//     // }
-
-//     render() {
-//         let newHouseArray = this.state.houses.map((house, i) => {
-//             return(
+    render() {
+        console.log('listings state: ', this.state)
+        let newHouseArray = this.state.houses.map((house, i) => {
+            return(
         
-//             <div key={ house } >
-//                 <div>
-//                     <img className="prop-img" src="" alt=""/>
-//                 </div>
-//                 <div>
-//                     <h1>Name</h1>
-//                 </div>
-//                 <div>
-//                     <p>House information will go here</p>
-//                     <h1>Loan: {house.loan}</h1>
-//                     <h1>Monthly Mortage: </h1>
-//                     <h1>Recommended Rent: </h1>
-//                     <h1>Desired Rent:</h1>
-//                     <h1>Addess:</h1>
-//                     <h1>City: </h1>
-//                 </div>
-//                 <div>x</div>
-//             </div>
+            <div key={ i } >
+                <div>
+                    <img className="prop-img" src={house.image} alt=""/>
+                </div>
+                <div>
+                    <h1>{house.name}</h1>
+                </div>
+                <div>
+                    <p>{house.info}</p>
+                    <h1>Loan: {house.loan_amount}</h1>
+                    <h1>Monthly Mortage: {house.mortgage}</h1>
+                    {/* <h1>Recommended Rent: {house.rec_rent}</h1> */}
+                    <h1>Desired Rent: {house.des_rent}</h1>
+                    <h1>Addess: {house.address}</h1>
+                    <h1>City: {house.city}</h1>
+                </div>
+                <div>x</div>
+            </div>
 
-//         )})
-//         return(
-
-//             { newHouseArray }
+        )})
+        return(
+            
+           newHouseArray 
  
-//          )}
-//     }
+         )}
+    }
+
     
-//     export default Listings;
+export default Listings;

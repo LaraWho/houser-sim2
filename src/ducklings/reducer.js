@@ -8,7 +8,7 @@ let initialState = {
   zipcode: '',
   image: '',
   loan_amount: '$',
-  mortgage: '$',
+  mortgage: '',
   des_rent: '$',
   user: {}
 

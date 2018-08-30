@@ -36,7 +36,7 @@ const express = require('express')
     app.delete('/auth/logout', login_cntrl.logout);
 
     //properties endpoints
-    // app.post('/properties', house_cntrl.create);
+    app.post('/properties', house_cntrl.create);
     app.get('/properties', house_cntrl.view_all);
     // app.delete('/properties/:id', house_cntrl.delete);
 

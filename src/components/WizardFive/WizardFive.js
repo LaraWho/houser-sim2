@@ -3,20 +3,38 @@ import Nav from '../Navigation/Nav';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { updateDesRent } from '../../ducklings/reducer';
+import axios from 'axios';
+// import sweetie from 'sweetalert';
 
 class WizardFive extends Component {
     constructor(props) {
         super(props)
 
         this.addDesRent = this.addDesRent.bind(this);
+        this.addHouse = this.addHouse.bind(this);
     }
 
     addDesRent(e) {
         this.props.updateDesRent(e.target.value)
     }
 
+    addHouse() {
+        const { name, info, address, city, c_state, zipcode, image, loan_amount, mortgage, des_rent } = this.props
+
+        axios.post('/properties', {name, info, address, city, c_state, zipcode, image, loan_amount, mortgage, des_rent})
+        .then(res => {
+            console.log(res)
+        }).catch(() => console.log("Couldn't add a house!!"))
+        }
+
+    
+
 
     render() {
+        const number = +this.props.mortgage;
+        const maths = (number) / 100 * 25;
+        const calculation = (number + maths);
+
         return(
         <div>
                 
@@ -38,7 +56,7 @@ class WizardFive extends Component {
                         <img className="one-dot" src={require('../../assets/step_active.png')} alt="step5"/>
                     </div>
                 <div>
-                    <p className="input-header rent">Recommended Rent:  </p>
+                    <p className="input-header rent">Recommended Rent: ${calculation}  </p>
                 </div>
                 <div>
                     <p className="input-header">Desired Rent</p>
@@ -57,6 +75,7 @@ class WizardFive extends Component {
         )
     }
 }
+
 
 function mapStateToProps(state) {
     const { des_rent, mortgage } = state

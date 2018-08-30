@@ -1,7 +1,7 @@
 CREATE TABLE house_info (
     house_id SERIAL PRIMARY KEY,
-    house_name character varying(80),
-    house_info character varying(400),
+    name character varying(80),
+    info character varying(400),
     address character varying(120),
     city character varying(20),
     state character varying(20),
@@ -9,7 +9,6 @@ CREATE TABLE house_info (
     image text,
     loan_amount money,
     mortgage money,
-    rec_rent money,
     des_rent money,
     seller_id INTEGER,
     FOREIGN KEY (seller_id) references houser_users(user_id)
