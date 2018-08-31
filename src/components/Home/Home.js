@@ -88,10 +88,10 @@ handleRegister(e) {
                     </div>
                 </Jump>
                 <div>
-                    <p className="input-header">Username</p>
+                    <p className="input-header-login">Username</p>
                     <input className="login-input" type="text"
                     onChange={(e) => this.handleUsername(e.target.value)}/>
-                    <p className="input-header">Password</p>
+                    <p className="input-header-login">Password</p>
                     <input className="login-input" type="password"
                     onChange={(e) => this.handlePassword(e.target.value)}/>
                     <h6 className="password-rules">10 character limit</h6>

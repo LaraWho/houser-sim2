@@ -10,7 +10,7 @@ body {
     height: 170px;
 }
 
-.input-header {
+.input-header-login {
     margin: 5px;
     margin-top: 20px;
     font-weight: bold;
@@ -71,8 +71,13 @@ body {
         margin-top: 160px;
     }
 
-    .input-header {
-        margin-bottom: 8px;
+    .input-header-login {
+        margin-bottom: 5px;
+        margin-top: 30px;
+        text-align: left;
+        margin-left: 25%;
+        color: #333;
+        font-weight: bold;
     }
 
     .login-input {

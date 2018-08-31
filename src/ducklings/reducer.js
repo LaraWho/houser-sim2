@@ -38,7 +38,7 @@ export default function reducer(state=initialState, action) {
       case UPDATE_INFO:
         return Object.assign({}, state, { info: action.payload })
       case UPDATE_ADDRESS:
-        return Object.assign({}, state, { addess: action.payload })
+        return Object.assign({}, state, { address: action.payload })
       case UPDATE_CITY:
         return Object.assign({}, state, { city: action.payload })
       case UPDATE_STATE:

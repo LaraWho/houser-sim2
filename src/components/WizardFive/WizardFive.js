@@ -23,7 +23,7 @@ class WizardFive extends Component {
 
         axios.post('/properties', {name, info, address, city, c_state, zipcode, image, loan_amount, mortgage, des_rent})
         .then(res => {
-            console.log(res)
+            this.props.history.push("/dashboard")
         }).catch(() => console.log("Couldn't add a house!!"))
         }
 
@@ -67,7 +67,8 @@ class WizardFive extends Component {
 
                 <div className="bottom-btns">
                     <Link to="/wizard4"><button className="next-btn">Previous Step</button></Link>
-                    <Link to="/dashboard"><button className="complete">Complete</button></Link>
+                    <button className="complete"
+                    onClick={this.addHouse}>Complete</button>
                 </div>
             </div>
             
@@ -78,10 +79,18 @@ class WizardFive extends Component {
 
 
 function mapStateToProps(state) {
-    const { des_rent, mortgage } = state
+    const { name, info, address, city, c_state, zipcode, image, loan_amount, mortgage, des_rent } = state
     return {
-        des_rent,
-        mortgage
+        name,
+        info,
+        address, 
+        city, 
+        c_state, 
+        zipcode, 
+        image, 
+        loan_amount, 
+        mortgage, 
+        des_rent
     }
 }
 

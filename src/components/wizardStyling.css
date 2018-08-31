@@ -11,7 +11,11 @@
 
 .input-header {
     color: #333;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
+               
 
 input {
     height: 14px;
@@ -21,6 +25,8 @@ input {
 
 textarea {
     width: 60%;
+    height: 150px;
+
 }
 
 .add-new-header {
@@ -98,13 +104,20 @@ textarea {
     .middle-bar{
         background: linear-gradient(to bottom, #e2f3ea, #ffffff);
         width: 60%;
-        height: 100vh;
+        /* height: 100vh; */
         margin: auto;
     } 
 
     .add-new-header {
         font-size: 18px;
         margin: 20px;
+    }
+
+
+    .input-header {
+        margin: 5px;
+        margin-top: 20px;
+        font-weight: bold;
     }
 
     .bottom-btns {
@@ -164,6 +177,7 @@ textarea {
 
     textarea {
         width: 60%;
+        /* height: 300px; */
     }
     
     

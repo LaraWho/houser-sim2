@@ -7,8 +7,9 @@ module.exports = {
         dbInstance.login_user([username, password])
             .then(loginResults => {
             if(loginResults[0]) {
+                console.log('login controller!',loginResults[0])
                 req.session.user = loginResults[0]
-                res.status(200).send(loginResults);
+                res.status(200).send(loginResults[0]);
 
             } else {
                 return res.status(403).send("user not found")

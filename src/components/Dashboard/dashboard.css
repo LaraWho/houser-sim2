@@ -5,7 +5,7 @@
     font-weight: bold;
     border: none;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 50px;
 }
 
@@ -15,11 +15,12 @@ hr {
 
 .search-text-mob {
     font-weight: 400;
-    margin-top: 20px;
+    margin-top: 10px;
     color: #333
 }
 
 .search-input {
+    width: 80px;
     margin-top: 10px;
     border-radius: 5px;
     height: 30px;
@@ -63,12 +64,12 @@ hr {
         background: #afd4c0;
     }
 
-    .dash-middle-bar{
+    .dash-middle-bar {
         background: linear-gradient(to bottom, #e2f3ea, #ffffff);
         width: 60%;
-        height: 94vh;
+        /* height: 94vh; */
         margin: auto;
-        
+        padding-bottom: 30px;
     } 
 
     .add-prop-btn {
@@ -132,9 +133,4 @@ hr {
         margin-right: 5px;
     }
     
-    .prop-img {
-        height: 150px;
-        width: 150px;
-        background-color: #3b5249;
-    }
 }

@@ -35,7 +35,7 @@ class Dashboard extends Component {
                         </Media>
                             
                         <input className="search-input" type="text"
-                        placeholder=" 0"/>
+                        placeholder="0"/>
 
                         <Media query="(min-width: 920px)">
                             {matches => 

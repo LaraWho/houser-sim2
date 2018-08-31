@@ -1,0 +1,83 @@
+.prop-img {
+    height: 100px;
+    width: 100px;
+}
+
+
+.x {
+    margin: 3px;
+    font-weight: bold;
+    
+}
+
+.house-info {
+    padding-top: 10px;
+    background-color: #DBDCDB;
+    text-align: left;
+    width: 100px;
+    padding-left: 4px;
+}
+
+.house-title {
+    margin-top: 18px;
+    font-weight: bold;
+    margin-right: 3px;
+    text-align: left;
+    margin-left: 4px;
+}
+
+.house-info-box {
+    padding-right: 5px;
+    text-align: left;
+    margin-left: 4px;
+    width: 100px;
+    margin-top: 5px;
+}
+
+
+.listing-box {
+    display: flex;
+    margin: auto;
+    margin: 10px;
+    color: #333;
+    /* background-color: #9b9a9a; */
+    width: 300px;
+}
+
+
+@media all and (min-width: 920px) {
+.listing-box {
+    display: flex;
+    background-color: #D9D9D9;
+    height: 150px;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.x {
+    margin-top: 5px;
+}
+
+.prop-img {
+    height: 150px;
+    width: 150px;
+}
+
+.house-name {
+    margin-left: 20px;
+
+}
+
+.house-info {
+    width: 250px;
+    margin-left: 20px;
+    margin-top: 10px;
+    
+}
+
+.house-info-box {
+    width: 250px;
+    margin-top: 15px;
+}
+}
