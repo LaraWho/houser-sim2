@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../Navigation/Nav';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updateDesRent, updateRecRent } from '../../ducklings/reducer';
+import { updateDesRent, resetInputs } from '../../ducklings/reducer';
 import axios from 'axios';
 // import sweetie from 'sweetalert';
 
@@ -12,6 +12,7 @@ class WizardFive extends Component {
 
         this.addDesRent = this.addDesRent.bind(this);
         this.addHouse = this.addHouse.bind(this);
+        this.clearInputs = this.clearInputs.bind(this);
     }
 
     addDesRent(e) {
@@ -23,10 +24,14 @@ class WizardFive extends Component {
 
         axios.post('/properties', {name, info, address, city, c_state, zipcode, image, loan_amount, mortgage, des_rent, rec_rent})
         .then(res => {
+            this.props.resetInputs()
             this.props.history.push("/dashboard")
         }).catch(() => console.log("Couldn't add a house!!"))
         }
 
+        clearInputs() {
+            this.props.resetInputs()
+        }
     
 
 
@@ -43,7 +48,8 @@ class WizardFive extends Component {
             <div className="middle-bar">
                     <h1 className="add-new-header">Add New Listing</h1>
                         <div className="cancel">
-                        <Link to="/dashboard" ><button className="cancel-btn">Cancel</button></Link>
+                        <Link to="/dashboard" ><button className="cancel-btn"
+                        onClick={this.clearInputs}>Cancel</button></Link>
                         </div>
 
 
@@ -79,7 +85,7 @@ class WizardFive extends Component {
 
 
 function mapStateToProps(state) {
-    const { name, info, address, city, c_state, zipcode, image, loan_amount, mortgage, des_rent, rec_rent } = state
+    const { name, info, address, city, c_state, zipcode, image, loan_amount, mortgage, des_rent } = state
     return {
         name,
         info,
@@ -91,8 +97,7 @@ function mapStateToProps(state) {
         loan_amount, 
         mortgage, 
         des_rent,
-        rec_rent
     }
 }
 
-export default connect(mapStateToProps, { updateDesRent, updateRecRent })(WizardFive);
+export default connect(mapStateToProps, { updateDesRent, resetInputs })(WizardFive);

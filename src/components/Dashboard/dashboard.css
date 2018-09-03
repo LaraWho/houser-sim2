@@ -62,15 +62,20 @@ hr {
     
     body {
         background: #afd4c0;
+        overflow-x: hidden;
     }
 
     .dash-middle-bar {
         background: linear-gradient(to bottom, #e2f3ea, #ffffff);
         width: 60%;
         height: 100vh;
+        overflow-y: scroll;
         margin: auto;
         padding-bottom: 30px;
+        margin-left: 20%;
+
     } 
+    .dash-middle-bar::-webkit-scrollbar { width: 0 !important }
 
     .add-prop-btn {
         margin-top: 30px;

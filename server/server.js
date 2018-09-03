@@ -17,7 +17,7 @@ const express = require('express')
     app.use(session({
         secret: process.env.SESSION_SECRET,
         resave: false,
-        saveUninitialized: true,
+        saveUninitialized: false,
         cookie: {
             maxAge: 1000 * 60 * 60 * 24 * 14
         }
@@ -39,6 +39,8 @@ const express = require('express')
     app.post('/properties', house_cntrl.create);
     app.get('/properties', house_cntrl.view_all);
     app.delete('/properties/:house_id', house_cntrl.delete);
+    app.get('/properties', house_cntrl.filter);
+
 
    
 

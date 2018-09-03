@@ -4,6 +4,10 @@ import axios from 'axios';
 import sweetie from 'sweetalert';
 import './listings.css';
 import Media from "react-media";
+import { connect } from 'react-redux';
+import { filterHouses } from '../../ducklings/reducer';
+
+
 
 class Listings extends Component {
     constructor(props) {
@@ -24,7 +28,7 @@ class Listings extends Component {
                 houses: res.data
             })
         }).catch(() => {
-            console.log('?!?!?')
+            console.log('?!?!? Nooo houses')
             // sweetie({
             //     title: 'Oh NOOO',
             //     text: "AAAH!"
@@ -51,9 +55,14 @@ class Listings extends Component {
               })
             }
 
+
     render() {
         // console.log('listings state: ', this.state)
+        
+
         let newHouseArray = this.state.houses.map((house, i) => {
+            console.log(house.mortgage)
+
             return(
         
             <div key={ i } className="listing-box">
@@ -76,7 +85,7 @@ class Listings extends Component {
                                 <h1>Loan: {house.loan_amount}</h1>
                                 <h1>Monthly Mortage: {house.mortgage}</h1>
                                 <h1>Desired Rent: {house.des_rent}</h1>
-                                <h1>Recommended Rent: {house.rec_rent}</h1>
+                                <h1>Recommended Rent: ${house.mortgage * 1.25}</h1>
                                 <h1>Addess: {house.address}</h1>
                                 <h1>City: {house.city}</h1>
                                 </div>
@@ -92,15 +101,20 @@ class Listings extends Component {
                             onClick={() => this.deleteHouse(house.house_id)}>x</div>
                 </div>
                 
-            
 
         )})
         return(
             
            newHouseArray 
- 
+           
          )}
     }
 
+    function mapStateToProps(state) {
+        const { houses } = state
+        return {
+            houses
+        }
+    }
     
-export default Listings;
+export default connect(mapStateToProps, {filterHouses})(Listings);

@@ -4,7 +4,7 @@ import Nav from '../Navigation/Nav';
 import '../wizardStyling.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updateLoan, updateMortgage } from '../../ducklings/reducer';
+import { updateLoan, updateMortgage, resetInputs } from '../../ducklings/reducer';
 
 
 class WizardFour extends Component {
@@ -13,7 +13,7 @@ class WizardFour extends Component {
 
         this.addLoan = this.addLoan.bind(this);
         this.addMortgage = this.addMortgage.bind(this);
-
+        this.clearInputs = this.clearInputs.bind(this);
     }
 
     addLoan(e) {
@@ -22,6 +22,10 @@ class WizardFour extends Component {
 
     addMortgage(e) {
         this.props.updateMortgage(e.target.value)
+    }
+
+    clearInputs() {
+        this.props.resetInputs()
     }
 
     render() {
@@ -34,7 +38,8 @@ class WizardFour extends Component {
 
                     <h1 className="add-new-header">Add New Listing</h1>
                     <div className="cancel">
-                        <Link to="/dashboard" ><button className="cancel-btn">Cancel</button></Link>
+                        <Link to="/dashboard" ><button className="cancel-btn"
+                        onClick={this.clearInputs}>Cancel</button></Link>
                     </div>
 
                     <div className="dots">
@@ -78,4 +83,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { updateLoan, updateMortgage })(WizardFour);
+export default connect(mapStateToProps, { updateLoan, updateMortgage, resetInputs })(WizardFour);

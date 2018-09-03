@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../Navigation/Nav';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updateImage } from '../../ducklings/reducer';
+import { updateImage, resetInputs } from '../../ducklings/reducer';
 
 
 class WizardThree extends Component {
@@ -10,10 +10,16 @@ class WizardThree extends Component {
         super(props)
 
         this.addImage = this.addImage.bind(this);
+        this.clearInputs = this.clearInputs.bind(this);
+
     }
 
     addImage(e) {
         this.props.updateImage(e.target.value)
+    }
+
+    clearInputs() {
+        this.props.resetInputs()
     }
 
     render() {
@@ -25,7 +31,8 @@ class WizardThree extends Component {
 
                     <h1 className="add-new-header">Add New Listing</h1>
                     <div className="cancel">
-                        <Link to="/dashboard" ><button className="cancel-btn">Cancel</button></Link>
+                        <Link to="/dashboard" ><button className="cancel-btn"
+                        onClick={() => this.clearInputs()}>Cancel</button></Link>
                     </div>
 
                     <div className="dots">
@@ -37,10 +44,13 @@ class WizardThree extends Component {
                         <img className="one-dot" src={require('../../assets/step_inactive.png')} alt="step5"/>
                     </div>
 
+                <div value={this.props.image}></div>
+                        <img className="image-preview" src={this.props.image} alt={this.props.image}/>
                 <div>
                     <p className="input-header">Image URL</p>
                     <input type="text" 
-                    onChange={this.addImage}/>
+                    onChange={this.addImage}
+                    value={this.props.image}/>
                 </div>
                 
                 <div className="bottom-btns">
@@ -63,4 +73,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { updateImage } )(WizardThree);
+export default connect(mapStateToProps, { updateImage, resetInputs } )(WizardThree);

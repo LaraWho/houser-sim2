@@ -5,6 +5,9 @@
         -webkit-font-smoothing: antialiased;
 }
 
+/* body::-webkit-scrollbar { 
+  background-color: #3B5249;
+} */
 
 p {
   font-size: 18px;

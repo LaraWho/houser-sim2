@@ -10,8 +10,8 @@ let initialState = {
   loan_amount: '$',
   mortgage: '',
   des_rent: '$',
-  rec_rent: '',
-  user: {}
+  user: {},
+  houses: []
 
 }
 
@@ -27,8 +27,8 @@ const UPDATE_IMAGE = "UPDATE_IMAGE";
 const UPDATE_LOAN = "UPDATE_LOAN";
 const UPDATE_MORTGAGE = "UPDATE_MORTGAGE";
 const UPDATE_DESRENT = "UPDATE_DESRENT";
-const UPDATE_RECRENT = "UPDATE_RECRENT";
-
+const RESET_INPUTS = "RESET_INPUTS";
+const FILTER_HOUSES = "FILTER_HOUSES";
 
 export default function reducer(state=initialState, action) {
     switch(action.type) {
@@ -55,14 +55,29 @@ export default function reducer(state=initialState, action) {
         return Object.assign({}, state, { mortgage: action.payload })
       case UPDATE_DESRENT:
         return Object.assign({}, state, { des_rent: action.payload })
-      case UPDATE_RECRENT:
-        return Object.assign({}, state, { rec_rent: action.payload })
-
+      case FILTER_HOUSES:
+        return Object.assign({}, state, { houses: action.payload })
+      case RESET_INPUTS:
+        return initialState;
       default: return state;
    }
 }
 
 //action creators
+
+export function filterHouses(houses) {
+  return {
+    type: FILTER_HOUSES,
+    payload: houses
+  }
+}
+
+export function resetInputs() {
+  return {
+    type: RESET_INPUTS
+  }
+}
+
 export const getUser = user => {
   return {
     type: GET_USER,
@@ -140,10 +155,4 @@ export function updateDesRent(des_rent) {
   }
 }
 
-export function updateRecRent(rec_rent) {
-  return {
-    type: UPDATE_RECRENT,
-    payload: rec_rent
-  }
-}
 

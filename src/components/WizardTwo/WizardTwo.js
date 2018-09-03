@@ -3,7 +3,7 @@ import Nav from '../Navigation/Nav';
 import { Link } from 'react-router-dom';
 import '../wizardStyling.css';
 import { connect } from 'react-redux';
-import { updateAddress, updateCity, updateState, updateZip } from '../../ducklings/reducer';
+import { updateAddress, updateCity, updateState, updateZip, resetInputs } from '../../ducklings/reducer';
 
 class WizardTwo extends Component {
     constructor(props) {
@@ -13,10 +13,11 @@ class WizardTwo extends Component {
             this.addCity = this.addCity.bind(this);
             this.addState = this.addState.bind(this);
             this.addZip= this.addZip.bind(this);
+            this.clearInputs = this.clearInputs.bind(this);
+
         }
 
         addAddress(e){
-            console.log(e.target.value)
             this.props.updateAddress(e.target.value)
         }
 
@@ -32,6 +33,10 @@ class WizardTwo extends Component {
             this.props.updateZip(e.target.value)
         }
 
+        clearInputs() {
+            this.props.resetInputs()
+        }
+
 
     render() {
         return(
@@ -42,7 +47,8 @@ class WizardTwo extends Component {
 
                  <h1 className="add-new-header">Add New Listing</h1>
                     <div className="cancel">
-                        <Link to="/dashboard" ><button className="cancel-btn">Cancel</button></Link>
+                        <Link to="/dashboard" ><button className="cancel-btn"
+                        onClick={this.clearInputs}>Cancel</button></Link>
                     </div>
 
                 <div className="dots">
@@ -101,4 +107,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { updateAddress, updateCity, updateState, updateZip } )(WizardTwo);
+export default connect(mapStateToProps, { updateAddress, updateCity, updateState, updateZip, resetInputs } )(WizardTwo);

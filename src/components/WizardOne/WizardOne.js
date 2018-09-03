@@ -4,7 +4,7 @@ import Nav from '../Navigation/Nav';
 import '../wizardStyling.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updateName, updateInfo } from '../../ducklings/reducer';
+import { updateName, updateInfo, resetInputs } from '../../ducklings/reducer';
 
 class WizardOne extends Component {
     constructor(props) {
@@ -12,6 +12,7 @@ class WizardOne extends Component {
 
             this.addName = this.addName.bind(this);
             this.addInfo = this.addInfo.bind(this);
+            this.clearInputs = this.clearInputs.bind(this);
         
     }
 
@@ -24,6 +25,10 @@ class WizardOne extends Component {
         this.props.updateInfo(e.target.value)
     }
 
+    clearInputs() {
+        this.props.resetInputs()
+    }
+
      
     render() {
         return(
@@ -33,7 +38,8 @@ class WizardOne extends Component {
                 <div className="middle-bar">
                     <h1 className="add-new-header">Add New Listing</h1>
                     <div className="cancel">
-                        <Link to="/dashboard" ><button className="cancel-btn">Cancel</button></Link>
+                        <Link to="/dashboard" ><button className="cancel-btn"
+                        onClick={this.clearInputs}>Cancel</button></Link>
                     </div>
 
                     <div className="dots">
@@ -78,4 +84,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { updateName, updateInfo })(WizardOne);
+export default connect(mapStateToProps, { updateName, updateInfo, resetInputs })(WizardOne);
