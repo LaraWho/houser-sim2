@@ -7,7 +7,9 @@
 .x {
     margin: 3px;
     font-weight: bold;
-    
+}
+.x:hover {
+    cursor: pointer;
 }
 
 .house-info {
@@ -27,6 +29,7 @@
 }
 
 .house-info-box {
+    margin: auto;
     padding-right: 5px;
     text-align: left;
     margin-left: 4px;
@@ -41,7 +44,16 @@
     margin: 10px;
     color: #333;
     /* background-color: #9b9a9a; */
-    width: 300px;
+    width: 80%;
+}
+
+@media all and (min-width: 700px) {
+    .listing-box {
+        margin-left: 25%;
+        width: 400px;
+        /* margin: auto; */
+    }
+
 }
 
 
@@ -57,27 +69,27 @@
 
 .x {
     margin-top: 5px;
+    width: 5%;
+    margin-right: 5px;
 }
 
 .prop-img {
     height: 150px;
-    width: 150px;
+    width: 200px;
 }
 
 .house-name {
     margin-left: 20px;
-
+    width: 200px;
 }
 
 .house-info {
     width: 250px;
     margin-left: 20px;
     margin-top: 10px;
-    
 }
 
 .house-info-box {
-    width: 250px;
     margin-top: 15px;
 }
 }

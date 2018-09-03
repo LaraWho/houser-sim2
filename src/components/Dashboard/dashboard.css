@@ -67,7 +67,7 @@ hr {
     .dash-middle-bar {
         background: linear-gradient(to bottom, #e2f3ea, #ffffff);
         width: 60%;
-        /* height: 94vh; */
+        height: 100vh;
         margin: auto;
         padding-bottom: 30px;
     } 

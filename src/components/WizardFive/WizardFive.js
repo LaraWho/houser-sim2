@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../Navigation/Nav';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updateDesRent } from '../../ducklings/reducer';
+import { updateDesRent, updateRecRent } from '../../ducklings/reducer';
 import axios from 'axios';
 // import sweetie from 'sweetalert';
 
@@ -19,9 +19,9 @@ class WizardFive extends Component {
     }
 
     addHouse() {
-        const { name, info, address, city, c_state, zipcode, image, loan_amount, mortgage, des_rent } = this.props
+        const { name, info, address, city, c_state, zipcode, image, loan_amount, mortgage, des_rent, rec_rent } = this.props
 
-        axios.post('/properties', {name, info, address, city, c_state, zipcode, image, loan_amount, mortgage, des_rent})
+        axios.post('/properties', {name, info, address, city, c_state, zipcode, image, loan_amount, mortgage, des_rent, rec_rent})
         .then(res => {
             this.props.history.push("/dashboard")
         }).catch(() => console.log("Couldn't add a house!!"))
@@ -79,7 +79,7 @@ class WizardFive extends Component {
 
 
 function mapStateToProps(state) {
-    const { name, info, address, city, c_state, zipcode, image, loan_amount, mortgage, des_rent } = state
+    const { name, info, address, city, c_state, zipcode, image, loan_amount, mortgage, des_rent, rec_rent } = state
     return {
         name,
         info,
@@ -90,8 +90,9 @@ function mapStateToProps(state) {
         image, 
         loan_amount, 
         mortgage, 
-        des_rent
+        des_rent,
+        rec_rent
     }
 }
 
-export default connect(mapStateToProps, { updateDesRent })(WizardFive);
+export default connect(mapStateToProps, { updateDesRent, updateRecRent })(WizardFive);

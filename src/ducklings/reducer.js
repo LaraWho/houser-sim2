@@ -10,6 +10,7 @@ let initialState = {
   loan_amount: '$',
   mortgage: '',
   des_rent: '$',
+  rec_rent: '',
   user: {}
 
 }
@@ -26,6 +27,7 @@ const UPDATE_IMAGE = "UPDATE_IMAGE";
 const UPDATE_LOAN = "UPDATE_LOAN";
 const UPDATE_MORTGAGE = "UPDATE_MORTGAGE";
 const UPDATE_DESRENT = "UPDATE_DESRENT";
+const UPDATE_RECRENT = "UPDATE_RECRENT";
 
 
 export default function reducer(state=initialState, action) {
@@ -53,6 +55,8 @@ export default function reducer(state=initialState, action) {
         return Object.assign({}, state, { mortgage: action.payload })
       case UPDATE_DESRENT:
         return Object.assign({}, state, { des_rent: action.payload })
+      case UPDATE_RECRENT:
+        return Object.assign({}, state, { rec_rent: action.payload })
 
       default: return state;
    }
@@ -135,3 +139,11 @@ export function updateDesRent(des_rent) {
     payload: des_rent
   }
 }
+
+export function updateRecRent(rec_rent) {
+  return {
+    type: UPDATE_RECRENT,
+    payload: rec_rent
+  }
+}
+

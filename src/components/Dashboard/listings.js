@@ -12,7 +12,10 @@ class Listings extends Component {
         this.state = {
             houses: []
         }
+
+        this.deleteHouse = this.deleteHouse.bind(this);
     }
+
 
     componentDidMount() {
         axios.get('/properties')
@@ -34,8 +37,22 @@ class Listings extends Component {
         // })
         }
 
+        deleteHouse(house_id) {
+            axios.delete(`/properties/${house_id}`)
+              .then(res => {
+                sweetie({
+                        text: "EXTERMINATE!",
+                        timer: 1000,
+                        buttons: false
+                    })
+                this.setState({
+                    houses: res.data
+                })
+              })
+            }
+
     render() {
-        console.log('listings state: ', this.state)
+        // console.log('listings state: ', this.state)
         let newHouseArray = this.state.houses.map((house, i) => {
             return(
         
@@ -59,6 +76,7 @@ class Listings extends Component {
                                 <h1>Loan: {house.loan_amount}</h1>
                                 <h1>Monthly Mortage: {house.mortgage}</h1>
                                 <h1>Desired Rent: {house.des_rent}</h1>
+                                <h1>Recommended Rent: {house.rec_rent}</h1>
                                 <h1>Addess: {house.address}</h1>
                                 <h1>City: {house.city}</h1>
                                 </div>
@@ -70,7 +88,8 @@ class Listings extends Component {
                                 </div>
                             )}
                         </Media>
-                            <div className="x">x</div>
+                            <div className="x"
+                            onClick={() => this.deleteHouse(house.house_id)}>x</div>
                 </div>
                 
             

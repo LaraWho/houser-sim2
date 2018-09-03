@@ -3,15 +3,15 @@ import './dashboard.css';
 import Nav from '../Navigation/Nav';
 import Media from "react-media";
 import { Link } from 'react-router-dom';
-import axios from 'axios';
-import sweetie from 'sweetalert';
+// import axios from 'axios';
+// import sweetie from 'sweetalert';
 import Listings from './listings';
 
 class Dashboard extends Component {
-    constructor(props) {
-        super(props)
+    // constructor(props) {
+    //     super(props)
 
-    }
+    // }
 
     
 
