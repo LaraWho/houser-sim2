@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Nav from '../Navigation/Nav';
-// import './wizardFour.css';
 import '../wizardStyling.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';

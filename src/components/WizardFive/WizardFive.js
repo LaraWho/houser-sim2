@@ -36,7 +36,7 @@ class WizardFive extends Component {
 
 
     render() {
-        const number = +this.props.mortgage;
+        const number = +this.props.mortgage.substring(1);
         const maths = (number) / 100 * 25;
         const calculation = (number + maths);
 

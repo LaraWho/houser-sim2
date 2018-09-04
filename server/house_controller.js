@@ -35,7 +35,9 @@ module.exports = {
 
         filter: (req, res) => {
         const dbInstance = req.app.get('db');
-        const { des_rent } = req.params;
+        const { des_rent } = req.body;
+
+            console.log('my filter controller', req.body)
 
         dbInstance.filter( [des_rent] )
         .then( rent => res.status(200).send(rent) )
