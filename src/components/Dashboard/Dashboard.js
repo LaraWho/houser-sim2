@@ -32,12 +32,11 @@ class Dashboard extends Component {
         getHouses() {
             axios.get('/properties')
             .then(res => {
-                console.log('populating houses state', res.data)
                 this.setState({
                     houses: res.data
                     }) 
-                }).catch(() => {
-                    console.log('could not filter, dammit')
+                }).catch((err) => {
+                    console.log(err)
                     })
                 }
 
@@ -47,12 +46,10 @@ class Dashboard extends Component {
             this.setState({
                     showFilter: !this.state.showFilter,
                     filteredHouses: this.state.houses.filter(response => {
-                    console.log('filterHouses method, des_rent amounts', response.des_rent.substring(1))
                     return response.des_rent.substring(1) >= this.state.input
 
                 })
             }) 
-            console.log('filteredHouses state array', this.state.filteredHouses)
         }
 
         toggleFilter() {
@@ -114,7 +111,6 @@ class Dashboard extends Component {
                             {matches =>
                             matches ? (
                                 <div className="house-info">
-                                {/* <hr className="horiz"/> */}
                                 <h1>Loan: {house.loan_amount}</h1>
                                 <h1>Monthly Mortage: {house.mortgage}</h1>
                                 <h1>Desired Rent: {house.des_rent}</h1>
@@ -124,7 +120,6 @@ class Dashboard extends Component {
                                 </div>
                             ) : (
                                 <div className="house-info">
-                                {/* <hr className="horiz"/> */}
                                 <h1>{house.address}</h1>
                                 <h1>{house.city}</h1>
                                 </div>

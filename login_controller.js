@@ -17,6 +17,14 @@ module.exports = {
         }).catch( err => res.sendStatus(500))
     },
 
+    checkUser: (req, res, next) => {
+        if(req.session.user === 0) {
+            res.status(403).send('Please, log in!')
+            .then(this.props.history.push('./dashboard'))
+        }
+        next()
+    },
+
     register: (req, res) => {
         const dbInstance = req.app.get('db')
         let {username, password} = req.body;

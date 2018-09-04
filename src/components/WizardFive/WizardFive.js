@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { updateDesRent, resetInputs } from '../../ducklings/reducer';
 import axios from 'axios';
-// import sweetie from 'sweetalert';
+import sweetie from 'sweetalert';
 
 class WizardFive extends Component {
     constructor(props) {
@@ -26,8 +26,11 @@ class WizardFive extends Component {
         .then(res => {
             this.props.resetInputs()
             this.props.history.push("/dashboard")
-        }).catch(() => console.log("Couldn't add a house!!"))
-        }
+        }).catch(() => {
+            sweetie('Woops, you should log in!')
+            this.props.history.push("/")
+        })
+    }
 
         clearInputs() {
             this.props.resetInputs()

@@ -10,8 +10,7 @@ let initialState = {
   loan_amount: '$',
   mortgage: '$',
   des_rent: '$',
-  user: {},
-  houses: []
+  user: {}
 
 }
 
@@ -28,7 +27,6 @@ const UPDATE_LOAN = "UPDATE_LOAN";
 const UPDATE_MORTGAGE = "UPDATE_MORTGAGE";
 const UPDATE_DESRENT = "UPDATE_DESRENT";
 const RESET_INPUTS = "RESET_INPUTS";
-const FILTER_HOUSES = "FILTER_HOUSES";
 
 export default function reducer(state=initialState, action) {
     switch(action.type) {
@@ -55,8 +53,6 @@ export default function reducer(state=initialState, action) {
         return Object.assign({}, state, { mortgage: action.payload })
       case UPDATE_DESRENT:
         return Object.assign({}, state, { des_rent: action.payload })
-      case FILTER_HOUSES:
-        return Object.assign({}, state, { houses: action.payload })
       case RESET_INPUTS:
         return initialState;
       default: return state;
@@ -65,12 +61,6 @@ export default function reducer(state=initialState, action) {
 
 //action creators
 
-export function filterHouses(houses) {
-  return {
-    type: FILTER_HOUSES,
-    payload: houses
-  }
-}
 
 export function resetInputs() {
   return {

@@ -5,9 +5,10 @@ const express = require('express')
     // , path = require('path');
 
 
+
     require('dotenv').config();
     const app = express();
-    // app.use(express.static(path.join(__dirname, '/build')));
+    app.use(express.static(path.join(__dirname, '/build')));
 
     app.use(bodyParser.json());
 
@@ -24,14 +25,15 @@ const express = require('express')
     }))
 
 
-    massive(process.env.CONNECTION_STRING).then(db => {
+    massive('postgres://vvckwcbyqchuph:1740225801a0881163803774fdadf6efdc9084ffe81c10989e5c905773c81e9b@ec2-54-243-59-122.compute-1.amazonaws.com:5432/dc76238vsvai9m?ssl=true')
+    .then(db => {
         console.log("database connected!");
         app.set('db', db)
     }).catch( error => console.error('ERROR!', error))
 
 
     //authorisation endpoints
-    app.post('/auth/login', login_cntrl.login);
+    app.post('/auth/login',login_cntrl.checkUser, login_cntrl.login);
     app.post('/auth/register', login_cntrl.register);
     app.delete('/auth/logout', login_cntrl.logout);
 
