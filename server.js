@@ -1,8 +1,8 @@
 const express = require('express')
     , massive = require('massive')
     , session = require('express-session')
-    , bodyParser = require('body-parser');
-    // , path = require('path');
+    , bodyParser = require('body-parser')
+    , path = require('path');
 
 
 

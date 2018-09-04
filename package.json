@@ -20,11 +20,11 @@
     "sweetalert": "^2.1.0"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "main": "server/server.js",
+  "main": "server.js",
   "proxy": "http://localhost:6789"
 }
