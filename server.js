@@ -16,7 +16,7 @@ const express = require('express')
     const login_cntrl = require('./login_controller');
 
     app.use(session({
-        secret: SESSION_SECRET.process.env,
+        secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: false,
         cookie: {
@@ -25,7 +25,7 @@ const express = require('express')
     }))
 
 
-    massive(CONNECTION_STRING.process.env)
+    massive(process.env.CONNECTION_STRING)
     .then(db => {
         console.log("database connected!");
         app.set('db', db)
