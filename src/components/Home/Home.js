@@ -43,11 +43,11 @@ handleLoginRequest(e) {
         this.props.getUser(res.data)
         sweetie({
             text: "LOGGING IN!",
-            timer: 1000,
+            timer: 500,
             buttons: false})
         setTimeout(() => {
             this.props.history.push('/dashboard');
-            }, 1000)
+            }, 500)
     })
     .catch(() => sweetie("Please Register, you don't seem to exist yet!"))
 }
@@ -63,11 +63,11 @@ handleRegister(e) {
         this.props.getUser(res.data)
         sweetie({
             text: "REGISTERED!",
-            timer: 1000,
+            timer: 500,
             buttons: false})
         setTimeout(() => {
         this.props.history.push('/dashboard');
-        }, 1000)
+        }, 500)
         } else {
             console.log('should not be registering', res.data)
             sweetie("More than 5 characters each, please!")

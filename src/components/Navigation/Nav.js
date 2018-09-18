@@ -24,11 +24,11 @@ class Dashboard extends Component {
           .then(res => {
             sweetie({
                 text: "Logging out",
-                timer: 1000,
+                timer: 500,
                 buttons: false})
             setTimeout(() => {
             this.props.history.push('/');
-            }, 1000)
+            }, 500)
           }).catch((err) => console.log(err))
       }
 

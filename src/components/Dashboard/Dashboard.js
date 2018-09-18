@@ -69,7 +69,7 @@ class Dashboard extends Component {
               .then(res => {
                 sweetie({
                         text: "EXTERMINATE!",
-                        timer: 1000,
+                        timer: 500,
                         buttons: false
                     })
                 this.setState({

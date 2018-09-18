@@ -16,7 +16,7 @@ const express = require('express')
     const login_cntrl = require('./login_controller');
 
     app.use(session({
-        secret: process.env.SESSION_SECRET,
+        secret: SESSION_SECRET.process.env,
         resave: false,
         saveUninitialized: false,
         cookie: {
@@ -25,7 +25,7 @@ const express = require('express')
     }))
 
 
-    massive('postgres://vvckwcbyqchuph:1740225801a0881163803774fdadf6efdc9084ffe81c10989e5c905773c81e9b@ec2-54-243-59-122.compute-1.amazonaws.com:5432/dc76238vsvai9m?ssl=true')
+    massive(CONNECTION_STRING.process.env)
     .then(db => {
         console.log("database connected!");
         app.set('db', db)

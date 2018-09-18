@@ -68,14 +68,21 @@ hr {
     .dash-middle-bar {
         background: linear-gradient(to bottom, #e2f3ea, #ffffff);
         width: 60%;
-        height: 100%;
-        overflow-y: visible;
+        height: 100vh;
+        overflow-y: scroll;
         margin: auto;
         padding-bottom: 30px;
         margin-left: 20%;
 
     } 
-    .dash-middle-bar::-webkit-scrollbar { width: 0 !important }
+    /* .dash-middle-bar::-webkit-scrollbar { width: 0 !important } */
+    /* .dash-middle-bar::-webkit-scrollbar { 
+        background-color: #208860 !important;
+    } */
+    .dash-middle-bar::-webkit-scrollbar-thumb {
+        color: #519872;
+    }
+
 
     .add-prop-btn {
         margin-top: 30px;
