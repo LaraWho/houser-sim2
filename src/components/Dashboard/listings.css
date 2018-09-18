@@ -53,7 +53,8 @@
 
 @media all and (min-width: 700px) {
     .listing-box {
-        margin-left: 25%;
+        margin: auto;
+        margin-top: 20px;
         width: 400px;
     }
 

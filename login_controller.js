@@ -34,6 +34,8 @@ module.exports = {
             if (username.length >= 5) {
                 req.session.username = username
                 req.session.password = password
+                req.session.user = user[0]
+
                 res.status(200).send(user)
                 console.log('register in controller', username)
             } else {

@@ -100,33 +100,39 @@ textarea {
 }
 
 .image-preview {
-    border: 2px solid #519872;
-    height: 150px;
-    width: auto;
+    height: auto;
+    width: 250px;
+    margin: auto;
+    border-radius: 2.5px;
+    position: relative;
+}
+
+.image-box {
     margin: auto;
     margin-top: 25px;
     border-radius: 2.5px;
     position: relative;
+    border: 2px solid #519872;
+    background-color: #519872;
+    min-height: 150px;
+    width: 256px;
 }
 
 
 @media all and (min-width: 920px) {
 
     .image-preview {
-        border: 2px solid #519872;
         border-radius: 2.5px;
         width: 300px;
-        height: 250px;
+        height: auto;
         margin: auto;
-        margin-top: 35px;
     }
 
-    /* .image-box {
+    .image-box {
         border: 2px solid #519872;
-        height: 250px;
-        width: 250px;
-        border-radius: 2.5px;
-    } */
+        min-height: 150px;
+        min-width: 306px;
+    }
     
     .middle-bar{
         background: linear-gradient(to bottom, #e2f3ea, #ffffff);

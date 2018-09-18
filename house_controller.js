@@ -4,11 +4,8 @@ module.exports = {
         const dbInstance = req.app.get('db')
         let {user_id} = req.session.user
 
-        // console.log('user_id:', user_id)
-
         dbInstance.view_all([user_id])
         .then(houses => {
-            // console.log('houses.house_id is', houses.house_id)
 
             res.status(200).send(houses)
             

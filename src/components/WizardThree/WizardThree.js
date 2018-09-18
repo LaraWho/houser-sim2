@@ -44,8 +44,10 @@ class WizardThree extends Component {
                         <img className="one-dot" src={require('../../assets/step_inactive.png')} alt="step5"/>
                     </div>
 
-                <div value={this.props.image}></div>
+                <div className="image-box" value={this.props.image}>
                         <img className="image-preview" src={this.props.image} alt={this.props.image}/>
+                </div>
+
                 <div>
                     <p className="input-header">Image URL</p>
                     <input type="text" 

@@ -44,7 +44,7 @@ class Dashboard extends Component {
 
         filterHouses() {
             this.setState({
-                    showFilter: !this.state.showFilter,
+                    showFilter: true,
                     filteredHouses: this.state.houses.filter(response => {
                     return response.des_rent.substring(1) >= this.state.input
 
@@ -54,7 +54,7 @@ class Dashboard extends Component {
 
         toggleFilter() {
             this.setState({
-                showFilter: !this.state.showFilter
+                showFilter: false
             })
         }
 

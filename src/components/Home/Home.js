@@ -54,12 +54,12 @@ handleLoginRequest(e) {
 
 
 handleRegister(e) {
+    
+    if(this.state.username.length && this.state.password.length >= 5) {
     axios.post('/auth/register', {
         username: this.state.username,
         password: this.state.password
     }).then(res => {
-        if(this.state.username.length && this.state.password.length >= 5) {
-        console.log('registering in front', res.data)
         this.props.getUser(res.data)
         sweetie({
             text: "REGISTERED!",
@@ -68,14 +68,13 @@ handleRegister(e) {
         setTimeout(() => {
         this.props.history.push('/dashboard');
         }, 500)
-        } else {
-            console.log('should not be registering', res.data)
-            sweetie("More than 5 characters each, please!")
-        }
     }).catch(() => sweetie({
-            title: "Could not register due to lack of character",
-            text: "5 character minimum here"}))
-}
+        title: "Could not register due to lack of character",
+        text: "5 character minimum here"}))
+    } else {
+        sweetie("More than 5 characters each, please!")
+    }
+    }
 
 
 
