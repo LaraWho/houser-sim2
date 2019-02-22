@@ -26,24 +26,24 @@ module.exports = {
     },
 
     register: (req, res) => {
+        if (username.length && password.length >= 5) {
+
         const dbInstance = req.app.get('db')
         let {username, password} = req.body;
 
         dbInstance.register_user( [username, password] )
         .then( user => {
-            if (username.length >= 5) {
                 req.session.username = username
                 req.session.password = password
                 req.session.user = user[0]
-
                 res.status(200).send(user)
                 console.log('register in controller', username)
-            } else {
-                console.log('my else statement')
-                return res.sendStatus(406)
-            }
-        }).catch( err => res.sendStatus(500))
-    },
+            }).catch( err => res.sendStatus(500))
+        } else {
+            console.log('my else statement')
+            return res.sendStatus(406)
+        }
+        },
 
     logout: (req, res) => {
         req.session.destroy(() => {
